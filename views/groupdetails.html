@@ -1,0 +1,511 @@
+<!-- index.html -->
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="groupApp">
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+    <title>Pureprofile groups</title>
+    <!-- SPELLS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <link rel="stylesheet" href="//cloud.pureprofile.com/css/styles/PPbootstrap.css"
+          type="text/css">
+    <link rel="stylesheet" href="//cloud.pureprofile.com/css/styles/pp-pages.css" type="text/css">
+<script type="text/javascript">
+    var groupuniqued = '<%= gid %>';
+
+    var groupApp = angular.module("groupApp", []);
+
+    var groupModel = {
+        "OldBrandID": "3369",
+        "HasretailStores": "0",
+        "BrandName": "JB Hi Fi",
+        "WikipediaURL": "",
+        "OfficialFacebookPage": "",
+        "ParentBrand": "",
+        "CountOfProductCategories": "0",
+        "mainbrandurl": "www.jbhifi.com.au",
+        "Types": "",
+        "Industry": "",
+        "CreatedDate": "19/09/2014",
+        "BrandBriefAndNotes": "http://cloud.pureprofile.com/brand-icons/live/jbhifi.jpeg",
+        "BrandID": "a0M90000009fETS",
+        "BrandImageURL": "http://assets.pureprofile.com/images/brands/jb-hi-fi.jpg",
+        "FacebookLikes": "",
+        "Global": "0",
+        "TwitterHandle": "",
+        "BrandAccount": "",
+        "LinkedinURL": "",
+        "CreatedBy": "Paul Chan",
+        "PureprofileBrandDashboard": "",
+        "BrandTrackingURL": "",
+        "TwitterFollowers": "",
+        "Size": "",
+        "Country": "United States of America",
+        "Description": "Join Pureprofile, Our account holders answer thousands of questions every day in online paid surveys. The answers provided allow us to put people into useful groups, like this one. Groups of people with similar likes, dislikes, opinions and values are then used to target people for future campaigns"
+    };
+
+    groupApp.controller('groupCtrl', function ($scope) {
+        $scope.Groupuniquname = groupuniqued;
+        $scope.groupData =groupModel;
+    });
+</script>
+</head>
+<!-- SET THE CONTROLLER AND GET ALL TODOS -->
+<body  >
+<div class="wrapper">
+    <div class="pp-topbar navbar-fixed-top">
+        <div class="container">
+            <div class="row">
+                <div class="span2">
+                    <a id="backurl" href="/">
+                        <img class="topbar-logo" alt="pureprofile.com" title="pureprofile.com" src="//images.pureprofile.com/cloud/images/pp_logo.png">
+                    </a>
+                </div>
+                <div class="span5 topbar-info">
+                    <div class="topbar-account-menu pull-right">
+                        <ul class="nav nav-pills">
+                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;">
+                                <div class="account-name">
+                                    WahidUS <b class="caret"></b>
+                                </div>
+                            </a>
+                                <ul class="dropdown-menu" style="margin-top: 0px;">
+                                    <li><a href="http://profile.pureprofile.com"><i class="ah-acc-icons account"></i>Profile</a></li>
+                                    <li><a href="http://transactions.pureprofile.com"><i class="ah-acc-icons transactions">
+                                    </i>Transactions</a></li>
+                                    <li><a href="https://accounts.pureprofile.com/settings"><i class="ah-acc-icons settings">
+                                    </i>Settings</a></li>
+                                    <li><a href="https://redemptions.pureprofile.com/au"><i class="ah-acc-icons redemptions">
+                                    </i>Redemptions</a></li>
+                                    <li><a href="http://referrals.pureprofile.com"><i class="ah-acc-icons referrals"></i>
+                                        Referrals</a></li>
+                                    <li class="log-out"><a href="https://accounts.pureprofile.com/logout">Log out</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="balance">
+                                    <p>
+                                        Balance: <strong>$55.20</strong>
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pp-colorbar profile navbar-fixed-top">
+    </div>
+    <div class="pp-colorbar navbar-fixed-top group ">
+    </div>
+
+    <div class="container page-container group-header-section" ng-init="Groupuniquname = '<%= gid %>'" ng-controller="groupCtrl">
+        <div class="row">
+            <!-- Group image -->
+            <div class="span3 aside">
+                <div class="col-box">
+                    <div class="group-image">
+                        <img src="{{groupData.BrandImageURL}}"
+                             alt="Male image">
+                    </div>
+                </div>
+            </div>
+            <!-- Content -->
+            <div class="span6 middle-content">
+                <div class="page-header">
+                    <img class="icon" src="//cloud.pureprofile.com/icons/pp-core-icons/groups-56.png"
+                         alt="pureprofile group">
+                    <h1 class="heading">
+                        Male</h1>
+                    <p class="sub-heading">
+                        Group <span class="bullet alt-color-groups">•</span> {{groupData.Country}} -  URL Group Name : {{Groupuniquname}}
+                    </p>
+                </div>
+                <div class="post-container">
+                    <div class="post pg-desc">
+                        <p>
+                            <b>{{groupData.BrandName}}</b></p>
+                        <p>
+                            {{groupData.Description}}
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span4 post-container">
+                        <div class="back-link group-page">
+                            <img class="ico" src="//cloud.pureprofile.com/icons/profile-icons/back-arrow-24.png"
+                                 alt="back">
+                            <h3>
+                                <a href="/us/about_you" onclick="createCookie('GroupUrlReferrer','', -1);">back to profile</a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="span3 aside">
+                <div class="col-box">
+                    <div class="group-ah-badge">
+                        <img src="//cloud.pureprofile.com/images/group-badges/couldbe-150.png" alt="Group status">
+                    </div>
+                    <div class="group-ah-badge-text">
+                        <p>
+                            Based on your profile answers, <span class="">you could be in this group</span></p>
+                    </div>
+                    <ul class="inline-list no-margin-left" style="display: none;">
+                        <li><span class="st_twitter_large" displaytext="Tweet" st_url="http://www3.pureprofile.com/us/group/male"
+                                  st_title="Male | pureprofile.com group" st_image="http://cloud.pureprofile.com/groups/live/201307091013020927508_7101781543748350484.jpg">
+                            </span></li>
+                        <li><span class="st_facebook_large" displaytext="Facebook" st_url="http://www3.pureprofile.com/us/group/male"
+                                  st_title="Male | pureprofile.com group" st_image="http://cloud.pureprofile.com/groups/live/201307091013020927508_7101781543748350484.jpg">
+                            </span></li>
+                        <li><span class="st_linkedin_large" displaytext="LinkedIn" st_url="http://www3.pureprofile.com/us/group/male"
+                                  st_title="Male | pureprofile.com group" st_image="http://cloud.pureprofile.com/groups/live/201307091013020927508_7101781543748350484.jpg">
+                            </span></li>
+                        <li><span class="st_email_large" displaytext="Email" st_url="http://www3.pureprofile.com/us/group/male"
+                                  st_title="Male | pureprofile.com group" st_image="http://cloud.pureprofile.com/groups/live/201307091013020927508_7101781543748350484.jpg">
+                            </span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container white-bg-content">
+        <div class="row top15">
+            <div class="span9 middle-content">
+                <!-- end of row -->
+                <div class="post-container">
+                    <div class="pg-section-heading">
+                        <img src="//cloud.pureprofile.com/icons/pp-core-icons/brands-24.png" alt="Brands">
+                        <h3>
+                            Connecting brands and people</h3>
+                    </div>
+                    <div class="pg-text-copy" style="color: #777777;">
+                        <p>
+                            People make choices about all sorts of things every day, what to watch, where to
+                            go, which one to buy... and with insight people and brands can make more informed
+                            decisions. These are some of the brands that people associate with this group.
+                        </p>
+                    </div>
+                </div>
+                <div class="post-container top10">
+                    <h2>
+                        No Brand attached</h2>
+                </div>
+                <div class="post-container">
+                    <div class="pg-section-heading">
+                        <img src="//cloud.pureprofile.com/icons/pp-core-icons/groups-24.png" alt="Related Groups">
+                        <h3>
+                            Related groups</h3>
+                    </div>
+                    <div class="pg-text-copy" style="color: #777777;">
+                        <p>
+                            We have created hundreds of groups and because our profiles are so in-depth, here
+                            is a small selection of some of the related groups that people can belong to.
+                        </p>
+                    </div>
+                    <div class="group-grid-container wide group-page top15">
+                        <div class="entity thumbnail ">
+                            <div class="image-holder">
+                                <div class="image-badge groups">
+                                    <a href="/us/group/female">
+                                        <img alt="Female" src="http://cloud.pureprofile.com/groups/thumb/live/201307091015044730635_2197471534203728651.jpg">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="text-holder">
+                                <h3>
+                                    <a href="/us/group/female">Female </a>
+                                </h3>
+                            </div>
+                            <div class="link-holder">
+                                <ul>
+                                    <li class="text-link">
+                                        <p>
+                                            <span class="alt-color-error">Not in</span> this group</p>
+                                    </li>
+                                    <li class="icon"><span class="ico-holder">
+                                            <img src="//cloud.pureprofile.com/icons/nav-icons/not-in-group-16px.png" alt="You are not in this group"></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="entity thumbnail ">
+                            <div class="image-holder">
+                                <div class="image-badge groups">
+                                    <a href="/us/group/engaged-or-married-1">
+                                        <img alt="Engaged or married" src="http://cloud.pureprofile.com/groups/thumb/live/201307091018346184872_1441750627901973672.jpeg">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="text-holder">
+                                <h3>
+                                    <a href="/us/group/engaged-or-married-1">Engaged or married </a>
+                                </h3>
+                            </div>
+                            <div class="link-holder">
+                                <ul>
+                                    <li class="text-link">
+                                        <p>
+                                            <span class="alt-color-error">Not in</span> this group</p>
+                                    </li>
+                                    <li class="icon"><span class="ico-holder">
+                                            <img src="//cloud.pureprofile.com/icons/nav-icons/not-in-group-16px.png" alt="You are not in this group"></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="entity thumbnail ">
+                            <div class="image-holder">
+                                <div class="image-badge groups">
+                                    <a href="/us/group/have-children-1">
+                                        <img alt="Have children" src="http://cloud.pureprofile.com/groups/thumb/live/201307191405430294125_5143951992889759123.jpg">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="text-holder">
+                                <h3>
+                                    <a href="/us/group/have-children-1">Have children </a>
+                                </h3>
+                            </div>
+                            <div class="link-holder">
+                                <ul>
+                                    <li class="text-link">
+                                        <p>
+                                            <span class="alt-color-error">Not in</span> this group</p>
+                                    </li>
+                                    <li class="icon"><span class="ico-holder">
+                                            <img src="//cloud.pureprofile.com/icons/nav-icons/not-in-group-16px.png" alt="You are not in this group"></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="entity thumbnail last-item">
+                            <div class="image-holder">
+                                <div class="image-badge groups">
+                                    <a href="/us/group/have-grandchildren-1">
+                                        <img alt="Have grandchildren" src="http://cloud.pureprofile.com/groups/thumb/live/201307091037085344100_7546506380173716836.jpg">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="text-holder">
+                                <h3>
+                                    <a href="/us/group/have-grandchildren-1">Have grandchildren </a>
+                                </h3>
+                            </div>
+                            <div class="link-holder">
+                                <ul>
+                                    <li class="text-link">
+                                        <p>
+                                            <span class="alt-color-error">Not in</span> this group</p>
+                                    </li>
+                                    <li class="icon"><span class="ico-holder">
+                                            <img src="//cloud.pureprofile.com/icons/nav-icons/not-in-group-16px.png" alt="You are not in this group"></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clearfix">
+                        </div>
+                    </div>
+                    <div class="group-grid-container wide group-page top15">
+                        <div class="entity thumbnail ">
+                            <div class="image-holder">
+                                <div class="image-badge groups">
+                                    <a href="/us/group/expecting-a-baby-1">
+                                        <img alt="Expecting a baby" src="http://cloud.pureprofile.com/groups/thumb/live/201307091039307591574_7793185411110957974.jpg">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="text-holder">
+                                <h3>
+                                    <a href="/us/group/expecting-a-baby-1">Expecting a baby </a>
+                                </h3>
+                            </div>
+                            <div class="link-holder">
+                                <ul>
+                                    <li class="text-link">
+                                        <p>
+                                            <span class="alt-color-error">Not in</span> this group</p>
+                                    </li>
+                                    <li class="icon"><span class="ico-holder">
+                                            <img src="//cloud.pureprofile.com/icons/nav-icons/not-in-group-16px.png" alt="You are not in this group"></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="entity thumbnail ">
+                            <div class="image-holder">
+                                <div class="image-badge groups">
+                                    <a href="/us/group/only-child-1">
+                                        <img alt="Only child" src="http://cloud.pureprofile.com/groups/thumb/live/201307091021586527326_3667945415004367966.jpg">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="text-holder">
+                                <h3>
+                                    <a href="/us/group/only-child-1">Only child </a>
+                                </h3>
+                            </div>
+                            <div class="link-holder">
+                                <ul>
+                                    <li class="text-link">
+                                        <p>
+                                            <span class="alt-color-error">Not in</span> this group</p>
+                                    </li>
+                                    <li class="icon"><span class="ico-holder">
+                                            <img src="//cloud.pureprofile.com/icons/nav-icons/not-in-group-16px.png" alt="You are not in this group"></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="entity thumbnail ">
+                            <div class="image-holder">
+                                <div class="image-badge groups">
+                                    <a href="/us/group/have-a-sister-1">
+                                        <img alt="Have a sister" src="http://cloud.pureprofile.com/groups/thumb/live/201307091029228384163_6489234419994177443.JPG">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="text-holder">
+                                <h3>
+                                    <a href="/us/group/have-a-sister-1">Have a sister </a>
+                                </h3>
+                            </div>
+                            <div class="link-holder">
+                                <ul>
+                                    <li class="text-link">
+                                        <p>
+                                            <span class="alt-color-error">Not in</span> this group</p>
+                                    </li>
+                                    <li class="icon"><span class="ico-holder">
+                                            <img src="//cloud.pureprofile.com/icons/nav-icons/not-in-group-16px.png" alt="You are not in this group"></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="entity thumbnail last-item">
+                            <div class="image-holder">
+                                <div class="image-badge groups">
+                                    <a href="/us/group/have-a-brother-1">
+                                        <img alt="Have a brother" src="http://cloud.pureprofile.com/groups/thumb/live/201307221534081230543_2130442577881768241.jpg">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="text-holder">
+                                <h3>
+                                    <a href="/us/group/have-a-brother-1">Have a brother </a>
+                                </h3>
+                            </div>
+                            <div class="link-holder">
+                                <ul>
+                                    <li class="text-link">
+                                        <p>
+                                            <span class="alt-color-error">Not in</span> this group</p>
+                                    </li>
+                                    <li class="icon"><span class="ico-holder">
+                                            <img src="//cloud.pureprofile.com/icons/nav-icons/not-in-group-16px.png" alt="You are not in this group"></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clearfix">
+                        </div>
+                    </div>
+                    <div class="group-grid-container wide group-page top15">
+                        <div class="clearfix">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="span3 aside">
+                <div class="col-box" style="display: none;">
+                    <div class="pg-section-heading">
+                        <img src="//cloud.pureprofile.com/icons/pp-core-icons/actions-24.png">
+                        <h3>
+                            Back to the old site...</h3>
+                        <div class="pg-text-copy">
+                            <p>
+                                To revert back to the old styled pureprofile - click the button below:</p>
+                        </div>
+                        <div class="buttons">
+                            <a href="/Groups/Callback/BackToOldProfile" class="btn pp-btn-grey">Back to old site</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-box">
+                    <div class="pp-ad-box top10">
+                        <div class="pg-section-heading">
+                            <img src="//dev.images.pureprofile.com/2012/icons/profile-value_24.png">
+                            <h3>
+                                Pureprofile</h3>
+                        </div>
+                        <div class="pp-ad-text" style="color: #777777;">
+                                <span>When you register with Pureprofile, you join thousands of other people who have
+                                    already set up their profile.</span><br>
+                            <br>
+                                <span>Completing a profile is fast and easy, you can voice your opinion by answering
+                                    questions in online paid surveys. </span>
+                            <br>
+                            <br>
+                                <span>It's simple, tell us what you think, get paid in cash and use your profile to
+                                    help you make better decisions.</span>
+                        </div>
+                        <div class="entity-summary">
+                            <a class="read-more alt-color-testimonials" href="/">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-box">
+                    <div class="pp-ad-box top10">
+                        <div class="pg-section-heading">
+                            <img src="http://dev.images.pureprofile.com/2012/icons/icon-testimonials.png">
+                            <h3>
+                                Testimonials</h3>
+                        </div>
+                        <div class="pp-ad-text">
+                            <p>
+                                Pioneering paid participation</p>
+                            <h3 class="metric alt-color-testimonials">
+                                since 2000</h3>
+                            <p>
+                                and loved by thousands of users.</p>
+                        </div>
+                        <div class="entity-summary">
+                            <a href="/testimonials" class="read-more alt-color-testimonials">See testimonials</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="push">
+        </div>
+    </div>
+</div>
+<div class="pp-footer">
+    <div class="container ">
+        <div class="row">
+            <div class="holder">
+                <strong class="sub-logo">Your participation pays</strong>
+            </div>
+            <div class="copyright">
+                <p>
+                    Copyright © 2000 - 2015. pureprofile Pty Ltd. Patented and patent
+                    pending.</p>
+            </div>
+            <ul>
+                <li><a href="http://www.pureprofile.com">pureprofile </a></li>
+                <li><a href="http://www.pureprofile.com/businesses">• Businesses </a></li>
+                <li><a href="http://www.pureprofile.com/terms">• Terms of Service</a></li>
+                <li><a href="http://www.pureprofile.com/privacy">• Privacy Policy</a></li>
+                <li><a href="http://www.pureprofile.com/faq">• FAQ</a></li>
+                <li><a href="http://www.pureprofile.com/contact">• Contact us</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
