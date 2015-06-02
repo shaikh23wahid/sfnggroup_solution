@@ -11,9 +11,11 @@ groupApp.controller('homeCtrl', function ($scope, groupRepository) {
     $scope.groupData = [];
     $scope.currentPage = 1;
     $scope.pageSize = 15;
+    $scope.isdatafetching = true;
 
     groupRepository.getGroups().success(function (groupdata) {
         $scope.groupData = groupdata.groups;
+        $scope.isdatafetching = false;
     });
 
     $scope.pageChangeHandler = function(num) {

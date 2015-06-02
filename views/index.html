@@ -38,8 +38,10 @@
     <br>
     <div class="row">
     <div class="container page-container">
-       <div  ng-controller="homeCtrl">
-        <div class="row" ng-show="groupData.length>0">
+       <div ng-controller="homeCtrl" >
+           <img style="margin-left:50%;" src="http://localhost:3000/images/spiffygif_30x30.gif" ng-show="isdatafetching"/>
+
+           <div class="row" ng-show="groupData.length>0">
             <div class="col-xs-6">
                 <label for="search">
                     Search:</label>
@@ -74,7 +76,7 @@
             </div>
         </div>
        </div>
-       <div ng-controller="OtherController" class="other-controller">
+       <div ng-controller="OtherController" class="other-controller" ng-show="!isdatafetching">
             <div class="text-right">
                 <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)"
                                          template-url="../dirPagination.tpl.html"></dir-pagination-controls>
