@@ -19,6 +19,7 @@
         var gdApp = angular.module("gdApp", []);
 
         gdApp.service('groupRepository', function ($http) {
+
             this.getGroupDetails = function (groupuniquename) {
                 var url = "http://52.74.171.222/getgroupdetails/" + groupuniquename ;
                 return $http.get(url);
@@ -28,12 +29,14 @@
         gdApp.controller('groupCtrl', function ($scope, groupRepository) {
             $scope.Groupuniquname = groupuniqued;
             $scope.groupdetails = {};
+            $scope.isdatafetching = true;
 
             groupRepository.getGroupDetails($scope.Groupuniquname).success(function (groupdata) {
                 $scope.groupdetails = groupdata.group;
+                $scope.isdatafetching = false;
             });
         });
-    </script> 
+    </script>
 </head>
 <!-- SET THE CONTROLLER AND GET ALL TODOS -->
 <body>
@@ -48,33 +51,7 @@
                 </div>
                 <div class="span5 topbar-info">
                     <div class="topbar-account-menu pull-right">
-                        <ul class="nav nav-pills">
-                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;">
-                                <div class="account-name">
-                                    WahidUS <b class="caret"></b>
-                                </div>
-                            </a>
-                                <ul class="dropdown-menu" style="margin-top: 0px;">
-                                    <li><a href="http://profile.pureprofile.com"><i class="ah-acc-icons account"></i>Profile</a></li>
-                                    <li><a href="http://transactions.pureprofile.com"><i class="ah-acc-icons transactions">
-                                    </i>Transactions</a></li>
-                                    <li><a href="https://accounts.pureprofile.com/settings"><i class="ah-acc-icons settings">
-                                    </i>Settings</a></li>
-                                    <li><a href="https://redemptions.pureprofile.com/au"><i class="ah-acc-icons redemptions">
-                                    </i>Redemptions</a></li>
-                                    <li><a href="http://referrals.pureprofile.com"><i class="ah-acc-icons referrals"></i>
-                                        Referrals</a></li>
-                                    <li class="log-out"><a href="https://accounts.pureprofile.com/logout">Log out</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <div class="balance">
-                                    <p>
-                                        Balance: <strong>$55.20</strong>
-                                    </p>
-                                </div>
-                            </li>
-                        </ul>
+                        
                     </div>
                 </div>
             </div>
@@ -84,10 +61,10 @@
     </div>
     <div class="pp-colorbar navbar-fixed-top group ">
     </div>
-    <div class="container page-container group-header-section">
-        <img src="http://localhost:3000/images/spiffygif_30x30.gif" />
+    <div class="container page-container group-header-section" ng-show="isdatafetching">
+        <img style="margin-left:50%;" src="http://localhost:3000/images/spiffygif_30x30.gif" />
     </div>
-    <div class="container page-container group-header-section">
+    <div class="container page-container group-header-section" ng-show="!isdatafetching">
         <div class="row">
             <!-- Group image -->
             <div class="span3 aside">
@@ -154,7 +131,7 @@
             </div>
         </div>
     </div>
-    <div class="container white-bg-content">
+    <div class="container white-bg-content"  ng-show="!isdatafetching">
         <div class="row top15">
             <div class="span9 middle-content">
                 <!-- end of row -->
