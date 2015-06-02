@@ -60,13 +60,13 @@
                     <th>Group ID</th>
                     <th>Image</th>
                     <th>Group Name</th>
-                    <td>Description</td>
+                    <th>Description</th>
                     <th>Country</th>
                     <th>Action</th>
                 </tr>
                 <tr dir-paginate="gd in groupData |filter:q | itemsPerPage: pageSize" current-page="currentPage">
                     <td>{{gd.groupid}}</td>
-                    <td><img src="{{gd.groupthumbnailurl}}" alt="{{gd.group_name}}" style="width:80px;height:80px;"></td>
+                    <td><img src="{{gd.groupthumbnailurl}}" alt="{{gd.group_name}}" style="width:120px;"></td>
                     <td>{{gd.groupname}}</td>
                     <td>{{gd.groupdescription}}</td>
                     <td>{{gd.countrycode}}</td>
