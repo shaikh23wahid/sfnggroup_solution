@@ -13,7 +13,7 @@ groupApp.controller('homeCtrl', function ($scope, groupRepository) {
     $scope.pageSize = 15;
 
     groupRepository.getGroups().success(function (groupdata) {
-        $scope.groupData = groupdata.Groups;
+        $scope.groupData = groupdata.groups;
     });
 
     $scope.pageChangeHandler = function(num) {

@@ -56,17 +56,19 @@
                 <table cellspacing="1px" cellpadding="1px" border="1" width="800px" >
                 <tr>
                     <th>Group ID</th>
+                    <th>Image</th>
                     <th>Group Name</th>
+                    <td>Description</td>
                     <th>Country</th>
-                    <th>Group URL </th>
                     <th>Action</th>
                 </tr>
                 <tr dir-paginate="gd in groupData |filter:q | itemsPerPage: pageSize" current-page="currentPage">
-                    <td>{{gd.id}}</td>
-                    <td>{{gd.group_name}}</td>
-                    <td>{{gd.country}}</td>
-                    <td>{{gd.group_url}}</td>
-                    <td><a href="/group/{{gd.group_url}}">View</a></td>
+                    <td>{{gd.groupid}}</td>
+                    <td><img src="{{gd.groupthumbnailurl}}" alt="{{gd.group_name}}" style="width:80px;height:80px;"></td>
+                    <td>{{gd.groupname}}</td>
+                    <td>{{gd.groupdescription}}</td>
+                    <td>{{gd.countrycode}}</td>
+                    <td><a href="/{{gd.countrycode}}/group/{{gd.groupuniquename}}/">View</a></td>
                 </tr>
                 </table>
             </div>
