@@ -2,12 +2,12 @@
 <!doctype html>
 
 <!-- ASSIGN OUR ANGULAR MODULE -->
-<html ng-app="gdApp">
+<html ng-app="gdApp" ng-controller="groupCtrl">
 <head>
     <!-- META -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
-    <title>Pureprofile groups</title>
+    <title>{{groupdetails.groupname}}</title>
     <!-- SPELLS -->
     <script src="https://code.angularjs.org/1.3.0/angular.js"></script>
     <link rel="stylesheet" href="//cloud.pureprofile.com/css/styles/PPbootstrap.css"
@@ -21,7 +21,8 @@
         gdApp.service('groupRepository', function ($http) {
 
             this.getGroupDetails = function (groupuniquename) {
-                var url = "http://52.74.171.222/getgroupdetails/" + groupuniquename ;
+                //var url = "http://52.74.171.222/getgroupdetails/" + groupuniquename ;
+                var url = "http://salesforce-python.pureprofile.com/getgroupdetails/" + groupuniquename ;
                 return $http.get(url);
             };
         });
@@ -40,7 +41,7 @@
 </head>
 <!-- SET THE CONTROLLER AND GET ALL TODOS -->
 <body>
-<div class="wrapper"  ng-init="Groupuniquname = '<%= gid %>'" ng-controller="groupCtrl">
+<div class="wrapper"  ng-init="Groupuniquname = '<%= gid %>'" >
     <div class="pp-topbar navbar-fixed-top">
         <div class="container">
             <div class="row">

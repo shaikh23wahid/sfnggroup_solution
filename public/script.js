@@ -2,7 +2,7 @@ var groupApp = angular.module("groupApp", ['angularUtils.directives.dirPaginatio
 
 groupApp.service('groupRepository', function ($http) {
     this.getGroups = function () {
-        var url = "http://52.74.171.222/getgroups";
+        var url = "http://salesforce-python.pureprofile.com/getgroups";
         return $http.get(url);
     };
 });
