@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html ng-app="pcApp">
+<head>
+    <title>Pureprofile Groups </title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <script src="https://code.angularjs.org/1.3.0/angular.js"></script>
+    <link rel="stylesheet" href="//cloud.pureprofile.com/css/styles/PPbootstrap.css"
+          type="text/css">
+    <link rel="stylesheet" href="//cloud.pureprofile.com/css/styles/pp-pages.css" type="text/css">
+    <link rel="stylesheet" href="../../../style.css" />
+    <script src="../../../productcategory.js"></script>
+    <script src="../../../dirPagination.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <div class="pp-topbar navbar-fixed-top" style="height: 60px;">
+        <div class="container">
+            <div class="row">
+                <div class="span2">
+                    <a id="backurl" href="/">
+                        <img class="topbar-logo" alt="pureprofile.com" title="pureprofile.com" src="//images.pureprofile.com/cloud/images/pp_logo.png">
+                    </a>
+                </div>
+                <div class="span5 topbar-info">
+                    <div class="topbar-account-menu pull-right">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pp-colorbar profile navbar-fixed-top">
+    </div>
+    <div class="pp-colorbar navbar-fixed-top group">
+    </div>
+    <br>
+    <div class="row">
+        <div class="container page-container">
+            <div ng-controller="pcCtrl" >
+                <img style="margin-left:50%;" src="http://newgroupsapp.pureprofile.com/images/spiffygif_30x30.gif" ng-show="isdatafetching"/>
+
+                <div class="row" ng-show="productCategories.length>0">
+                    <div class="col-xs-6" style="margin-left: 5px;">
+                        <label for="search">
+                            Search:</label>
+                        <input ng-model="filterText" id="search" class="form-control" placeholder="Filter text">
+                    </div>
+                    <div class="col-xs-6" ng-hide="true">
+                        <label for="search">
+                            items per page:</label>
+                        <input type="number" min="1" max="100" class="form-control" ng-model="pageSize">
+                    </div>
+                </div>
+                <div class="panel panel-default" ng-show="productCategories.length > 0">
+                    <div class="panel-body">
+                        <table cellspacing="1px" cellpadding="1px" border="1" width="800px" >
+                            <tr>
+                                <th>Sales Force ID</th>
+                                <th>Product Category Name</th>
+                                <th>Currency</th>
+                                <th>Action</th>
+                            </tr>
+                            <tr dir-paginate="pc in productCategories |filter: {name: filterText} | itemsPerPage: pageSize" current-page="currentPage">
+                                <td>{{pc.sfid}}</td>
+                                 <td>{{pc.name}}</td>
+                                <td>{{pc.currencyisocode}}</td>
+                                <td><a href="/{{pc.countrycode}}/product-category/{{pc.unique_name}}">View</a></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div ng-controller="OtherController" class="other-controller" ng-show="!isdatafetching">
+                <div class="text-right">
+                    <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)"
+                                             template-url="../../../dirPagination.tpl.html"></dir-pagination-controls>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+</div>
+<br>
+<div class="pp-footer">
+    <div class="container ">
+        <div class="row">
+            <div class="holder">
+                <strong class="sub-logo">Your participation pays</strong>
+            </div>
+            <div class="copyright">
+                <p>
+                    Copyright © 2000 - 2015. pureprofile Pty Ltd. Patented and patent
+                    pending.</p>
+            </div>
+            <ul>
+                <li><a href="http://www.pureprofile.com">pureprofile </a></li>
+                <li><a href="http://www.pureprofile.com/businesses">• Businesses </a></li>
+                <li><a href="http://www.pureprofile.com/terms">• Terms of Service</a></li>
+                <li><a href="http://www.pureprofile.com/privacy">• Privacy Policy</a></li>
+                <li><a href="http://www.pureprofile.com/faq">• FAQ</a></li>
+                <li><a href="http://www.pureprofile.com/contact">• Contact us</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

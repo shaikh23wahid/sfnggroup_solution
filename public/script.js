@@ -19,7 +19,7 @@ groupApp.controller('homeCtrl', function ($scope, groupRepository) {
     });
 
     $scope.pageChangeHandler = function(num) {
-        console.log('meals page changed to ' + num);
+        console.log('groups page changed to ' + num);
     };
 });
 
