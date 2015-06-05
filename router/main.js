@@ -8,6 +8,11 @@ module.exports=function(app)
         res.render('productcategorylist.html')
     });
 
+    app.get('/:countrycode/product-category/:pcuniquename/',function(req,res){
+        var pcuniquename = req.param('pcuniquename');
+        res.render('productcategorybrands.html',pcuname=pcuniquename);
+    });
+
     app.get('/:countrycode/group/:group_url/',function(req,res){
         var groupuniquename = req.param('group_url');
         res.render('groupdetails.html',gid=groupuniquename);
