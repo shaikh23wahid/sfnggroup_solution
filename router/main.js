@@ -5,7 +5,7 @@ module.exports=function(app)
     });
 
     app.get('/au/product-categories/',function(req,res){
-        res.render('productcategorylist.html')
+        res.render('productcategorylist.html',{})
     });
 
     app.get('/:countrycode/product-category/:pcuniquename/',function(req,res){
