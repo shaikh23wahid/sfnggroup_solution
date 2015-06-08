@@ -4,7 +4,7 @@ module.exports=function(app)
         res.render('index.html')
     });
 
-    app.get('/au/product-categories/',function(req,res){
+    app.get('/new/product-categories/newabc/xyz',function(req,res){
         res.render('productcategorylist.html',{})
     });
 
