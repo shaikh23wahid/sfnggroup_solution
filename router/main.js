@@ -4,8 +4,8 @@ module.exports=function(app)
         res.render('index.html')
     });
 
-    app.get('/new/product-categories/newabc/xyz',function(req,res){
-        res.render('productcategorylist.html',{})
+    app.get('/:countrycode/product-categories/',function(req,res){
+        res.render('productcategorylist.html')
     });
 
     app.get('/:countrycode/product-category/:pcuniquename/',function(req,res){
