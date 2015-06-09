@@ -17,4 +17,17 @@ module.exports=function(app)
         var groupuniquename = req.param('group_url');
         res.render('groupdetails.html',gid=groupuniquename);
     });
+
+    app.get('/:countrycode/brand/:branduniquename/',function(req,res){
+        var groupbranduniquename = req.param('branduniquename');
+        res.render('branddetails.html',bruname=groupbranduniquename );
+    });
+
+    app.get('/header',function(req,res){
+        res.render('partials/headerpartial.html');
+    });
+
+    app.get('/footer',function(req,res){
+        res.render('partials/footerpartial.html');
+    });
 }

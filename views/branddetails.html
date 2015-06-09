@@ -1,0 +1,75 @@
+<!-- index.html -->
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="brandApp" ng-controller="brandCtrl">
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+    <title>{{branddetails.brandname}}</title>
+    <!-- SPELLS -->
+    <script src="https://code.angularjs.org/1.3.0/angular.js"></script>
+    <link rel="stylesheet" href="//cloud.pureprofile.com/css/styles/PPbootstrap.css"
+          type="text/css">
+    <link rel="stylesheet" href="//cloud.pureprofile.com/css/styles/pp-pages.css" type="text/css">
+    <script src="../../../brand.js"></script>
+
+    <script type="text/javascript">
+        var branduniquename = '<%= bruname %>';
+    </script>
+</head>
+<!-- SET THE CONTROLLER AND GET ALL TODOS -->
+<body>
+<div class="wrapper"  ng-init="Branduniquname = '<%= bruname %>'" >
+    <div ng-include="'/header'"></div>
+    <div class="container page-container group-header-section" ng-show="isdatafetching">
+        <img style="margin-left:50%;" src="http://newgroupsapp.pureprofile.com/images/spiffygif_30x30.gif" />
+    </div>
+    <div class="container page-container group-header-section" ng-show="!isdatafetching">
+        <div class="row">
+            <!-- Group image -->
+            <div class="span3 aside">
+                <div class="col-box">
+                    <div class="group-image">
+                        <img ng-src="{{branddetails.groupmainimageurl}}"
+                             alt="{{branddetails.groupname}}">
+                    </div>
+                </div>
+            </div>
+            <!-- Content -->
+            <div class="span6 middle-content">
+                <div class="page-header">
+                    <img class="icon" src="//cloud.pureprofile.com/icons/pp-core-icons/groups-56.png"
+                         alt="pureprofile group">
+                    <h1 class="heading">
+                        {{branddetails.groupname}}</h1>
+                    <p class="sub-heading">
+                        Group <span class="bullet alt-color-groups">•</span> {{branddetails.country}}
+                    </p>
+                </div>
+                <div class="post-container">
+                    <div class="post pg-desc">
+                        <p>
+                            {{branddetails.branddescription}}
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span4 post-container">
+                        <div class="back-link group-page">
+                            <img class="ico" src="//cloud.pureprofile.com/icons/profile-icons/back-arrow-24.png"
+                                 alt="back">
+                            <h3>
+                                <a href="/">back to group list</a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+<div class="pp-footer" ng-include="'/footer'"></div>
+</div>
+</body>
+</html>
