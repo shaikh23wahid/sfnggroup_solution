@@ -12,10 +12,9 @@
      $scope.branddetails = {};
      $scope.isdatafetching = false;
 
-     /*
+
      brandRepository.getBrandDetails($scope.Branduniquname).success(function (branddata) {
-         $scope.branddetails = branddata.brand;
+         $scope.branddetails = branddata.branddetails;
          $scope.isdatafetching = false;
      });
-     */
  });

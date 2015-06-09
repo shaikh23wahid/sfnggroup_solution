@@ -32,8 +32,8 @@
             <div class="span3 aside">
                 <div class="col-box">
                     <div class="group-image">
-                        <img ng-src="{{branddetails.groupmainimageurl}}"
-                             alt="{{branddetails.groupname}}">
+                        <img ng-src="{{branddetails.brand_image_url__c}}"
+                             alt="{{branddetails.name}}">
                     </div>
                 </div>
             </div>
@@ -43,15 +43,28 @@
                     <img class="icon" src="//cloud.pureprofile.com/icons/pp-core-icons/groups-56.png"
                          alt="pureprofile group">
                     <h1 class="heading">
-                        {{branddetails.groupname}}</h1>
+                        {{branddetails.name}}</h1>
                     <p class="sub-heading">
-                        Group <span class="bullet alt-color-groups">•</span> {{branddetails.country}}
+                        Brand <span class="bullet alt-color-groups">•</span> {{branddetails.currencyisocode}}
                     </p>
                 </div>
                 <div class="post-container">
                     <div class="post pg-desc">
+                        <p ng-if="branddetails.linkedin_url__c">
+                            {{branddetails.linkedin_url__c}}
+                        </p>
                         <p>
-                            {{branddetails.branddescription}}
+                        <p ng-if="branddetails.main_brand_url__c">
+                            {{branddetails.main_brand_url__c}}
+                        </p>
+                        <p ng-if="branddetails.official_facebook_page__c">
+                            {{branddetails.official_facebook_page__c}}
+                        </p>
+                        <p ng-if="branddetails.twitter_handle__c">
+                            {{branddetails.twitter_handle__c}}
+                        </p>
+                        <p ng-if="branddetails.wikipedia_url__c">
+                            {{branddetails.wikipedia_url__c}}
                         </p>
                     </div>
                 </div>

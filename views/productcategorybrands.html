@@ -83,7 +83,6 @@
                 <div class="post-container top10" ng-if="productcategorydetails.brands.length == 0">
                     <h2>
                         No Brand Found
-
                     </h2>
                 </div>
                   <div class="post-container top10" ng-if="productcategorydetails.brands.length > 0">
@@ -93,11 +92,11 @@
                                 <li ng-repeat="brand in productcategorydetails.brands" class="brand-entity " data-original-title="{{brand.brandname}}" ng-class="$index % 4 == 0 && 'brand-entity last-item' || 'brand-entity'">
                                     <div class="brand-image-holder">
                                         <div class="brand-image">
-                                            <a href="#"><img src="{{brand.brand_image_url__c}}" alt="{{brand.name}}"></a>
+                                            <a href="/au/brand/{{brand.unique_name}}"><img src="{{brand.brand_image_url__c}}" alt="{{brand.name}}"></a>
                                         </div>
                                     </div>
                                     <div class="text-holder">
-                                        <h3><a href="#">{{brand.name}}</a></h3>
+                                        <h3><a href="/au/brand/{{brand.unique_name}}">{{brand.name}}</a></h3>
                                     </div>
                                 </li>
                                 <br>
