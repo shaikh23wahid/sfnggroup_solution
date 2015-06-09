@@ -41,51 +41,52 @@
            <img style="margin-left:50%;" src="http://newgroupsapp.pureprofile.com/images/spiffygif_30x30.gif" ng-show="isdatafetching"/>
 
            <div class="row" ng-show="groupData.length>0">
+               <a style="float:right;" href="/au/product-categories">Go to Product Categories</a>
             <div class="col-xs-6" style="margin-left: 5px;">
                 <label for="search">
                     Search:</label>
                 <input ng-model="txtFilter" id="search" class="form-control" placeholder="Filter text">
             </div>
-            <div class="col-xs-6" ng-hide="true">
-                <label for="search">
-                    items per page:</label>
-                <input type="number" min="1" max="100" class="form-control" ng-model="pageSize">
-            </div>
-        </div>
-        <div class="panel panel-default" ng-show="groupData.length>0">
-            <div class="panel-body">
-                <table cellspacing="1px" cellpadding="1px" border="1" width="800px" >
-                <tr>
-                    <th>Group ID</th>
-                    <th>Image</th>
-                    <th>Group Name</th>
-                    <th>Description</th>
-                    <th>Country</th>
-                    <th>Action</th>
-                </tr>
-                <tr dir-paginate="gd in groupData |filter:{groupname : txtFilter} | itemsPerPage: pageSize" current-page="currentPage">
-                    <td>{{gd.groupid}}</td>
-                    <td><img src="{{gd.groupthumbnailurl}}" alt="{{gd.group_name}}" style="width:120px;"></td>
-                    <td>{{gd.groupname}}</td>
-                    <td>{{gd.groupdescription}}</td>
-                    <td>{{gd.country}}</td>
-                    <td><a href="/{{gd.countrycode}}/group/{{gd.groupuniquename}}/">View</a></td>
-                </tr>
-                </table>
-            </div>
-        </div>
+               <!--  <div class="col-xs-6" ng-hide="true">
+                   <label for="search">
+                       items per page:</label>
+                   <input type="number" min="1" max="100" class="form-control" ng-model="pageSize">
+               </div>-->
+           </div>
+           <div class="panel panel-default" ng-show="groupData.length>0">
+               <div class="panel-body">
+                   <table cellspacing="1px" cellpadding="1px" border="1" width="800px" >
+                   <tr>
+                       <th>Group ID</th>
+                       <th>Image</th>
+                       <th>Group Name</th>
+                       <th>Description</th>
+                       <th>Country</th>
+                       <th>Action</th>
+                   </tr>
+                   <tr dir-paginate="gd in groupData |filter:{groupname : txtFilter} | itemsPerPage: pageSize" current-page="currentPage">
+                       <td>{{gd.groupid}}</td>
+                       <td><img src="{{gd.groupthumbnailurl}}" alt="{{gd.group_name}}" style="width:120px;"></td>
+                       <td>{{gd.groupname}}</td>
+                       <td>{{gd.groupdescription}}</td>
+                       <td>{{gd.country}}</td>
+                       <td><a href="/{{gd.countrycode}}/group/{{gd.groupuniquename}}/">View</a></td>
+                   </tr>
+                   </table>
+               </div>
+           </div>
+          </div>
+          <div ng-controller="OtherController" class="other-controller" ng-show="!isdatafetching">
+               <div class="text-right">
+                   <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)"
+                                            template-url="../dirPagination.tpl.html"></dir-pagination-controls>
+               </div>
+           </div>
        </div>
-       <div ng-controller="OtherController" class="other-controller" ng-show="!isdatafetching">
-            <div class="text-right">
-                <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)"
-                                         template-url="../dirPagination.tpl.html"></dir-pagination-controls>
-            </div>
-        </div>
-    </div>
-</div>
-    <br>
-</div>
-<br>
-<div class="pp-footer" ng-include="'/footer'"></div>
-</body>
-</html>
+   </div>
+       <br>
+   </div>
+   <br>
+   <div class="pp-footer" ng-include="'/footer'"></div>
+   </body>
+   </html>
