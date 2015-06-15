@@ -1,15 +1,14 @@
-
 <!DOCTYPE html>
-<html ng-app="pcApp">
+<html ng-app="celApp">
 <head>
-    <title>Pureprofile Groups </title>
+    <title>Pureprofile Celebrities </title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
     <script src="https://code.angularjs.org/1.3.0/angular.min.js"></script>
     <link rel="stylesheet" href="//cloud.pureprofile.com/css/styles/PPbootstrap.css"
           type="text/css">
     <link rel="stylesheet" href="//cloud.pureprofile.com/css/styles/pp-pages.css" type="text/css">
     <link rel="stylesheet" href="../../../style.css" />
-    <script src="../../../productcategory.js"></script>
+    <script src="../../../celebrity.js"></script>
     <script src="../../../dirPagination.js"></script>
 </head>
 <body>
@@ -37,10 +36,10 @@
     <br>
     <div class="row">
         <div class="container page-container">
-            <div ng-controller="pcCtrl" >
+            <div ng-controller="celebrityCtrl" >
                 <img style="margin-left:50%;" src="http://newgroupsapp.pureprofile.com/images/spiffygif_30x30.gif" ng-show="isdatafetching"/>
 
-                <div class="row" ng-show="productCategories.length>0">
+                <div class="row" ng-show="celebrities.length > 0">
                     <div class="col-xs-6" style="margin-left: 5px;">
                         <label for="search">
                             Search:</label>
@@ -52,20 +51,20 @@
                         <input type="number" min="1" max="100" class="form-control" ng-model="pageSize">
                     </div>
                 </div>
-                <div class="panel panel-default" ng-show="productCategories.length > 0">
+                <div class="panel panel-default" ng-show="celebrities.length > 0">
                     <div class="panel-body">
                         <table cellspacing="1px" cellpadding="1px" border="1" width="800px" >
                             <tr>
-                                <th>Sales Force ID</th>
-                                <th>Product Category Name</th>
-                                <th>Currency</th>
-                                <th>Action</th>
+                                <th>Celebrity ID</th>
+                                <th>Celebrity name</th>
+                                <th>Celebrity Type</th>
+                                <th class="hide">Action</th>
                             </tr>
-                            <tr dir-paginate="pc in productCategories |filter: {name: filterText} | itemsPerPage: pageSize" current-page="currentPage">
-                                <td>{{pc.sfid}}</td>
-                                 <td>{{pc.name}}</td>
-                                <td>{{pc.currencyisocode}}</td>
-                                <td><a href="/{{pc.countrycode}}/product-category/{{pc.unique_name}}">View</a></td>
+                            <tr dir-paginate="pc in celebrities |filter: {celebrity_name: filterText} | itemsPerPage: pageSize" current-page="currentPage">
+                                <td>{{pc.celebrity_id}}</td>
+                                <td>{{pc.celebrity_name}}</td>
+                                <td>{{pc.celebrity_type}}</td>
+                                <td class="hide"><a href="#">View</a></td>
                             </tr>
                         </table>
                     </div>

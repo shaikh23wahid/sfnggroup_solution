@@ -8,6 +8,14 @@ module.exports=function(app)
         res.render('productcategorylist.html')
     });
 
+    app.get('/:countrycode/celebrities/',function(req,res){
+        res.render('celebritylist.html')
+    });
+
+    app.get('/:countrycode/professions/',function(req,res){
+        res.render('professionlist.html')
+    });
+
     app.get('/:countrycode/product-category/:pcuniquename/',function(req,res){
         var pcuniquename = req.param('pcuniquename');
         res.render('productcategorybrands.html',pcuname=pcuniquename);
