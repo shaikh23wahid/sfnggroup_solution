@@ -24,14 +24,25 @@
       <file leaf-file-name="salesforcegroups.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/salesforcegroups.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.50389105">
-              <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.7684825">
+              <caret line="54" column="56" selection-start-line="54" selection-start-column="56" selection-end-line="54" selection-end-column="56" />
               <folding>
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#div#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <marker date="1434624954428" expanded="true" signature="3150:3168" placeholder="..." />
+                <marker date="1434625383814" expanded="true" signature="2818:2946" placeholder="..." />
+                <marker date="1434625383814" expanded="true" signature="3180:3198" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pptemplate.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/css/pptemplate.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="43" column="19" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -112,12 +123,12 @@
         <option value="$PROJECT_DIR$/public/profession.js" />
         <option value="$PROJECT_DIR$/views/celebritylist.html" />
         <option value="$PROJECT_DIR$/views/index.html" />
-        <option value="$PROJECT_DIR$/public/css/pptemplate.css" />
         <option value="$PROJECT_DIR$/public/category.js" />
         <option value="$PROJECT_DIR$/router/main.js" />
         <option value="$PROJECT_DIR$/views/categories.html" />
         <option value="$PROJECT_DIR$/public/sfgroups.js" />
         <option value="$PROJECT_DIR$/public/productcategory.js" />
+        <option value="$PROJECT_DIR$/public/css/pptemplate.css" />
         <option value="$PROJECT_DIR$/views/salesforcegroups.html" />
       </list>
     </option>
@@ -628,13 +639,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/pptemplate.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="1" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/category.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -712,15 +716,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/pptemplate.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="43" column="19" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/salesforcegroups.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.50389105">
-          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.7684825">
+          <caret line="54" column="56" selection-start-line="54" selection-start-column="56" selection-end-line="54" selection-end-column="56" />
           <folding>
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <marker date="1434624954428" expanded="true" signature="3150:3168" placeholder="..." />
+            <marker date="1434625383814" expanded="true" signature="2818:2946" placeholder="..." />
+            <marker date="1434625383814" expanded="true" signature="3180:3198" placeholder="..." />
           </folding>
         </state>
       </provider>
