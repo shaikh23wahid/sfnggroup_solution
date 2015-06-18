@@ -25,13 +25,14 @@
         <entry file="file://$PROJECT_DIR$/views/salesforcegroups.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.7684825">
-              <caret line="54" column="56" selection-start-line="54" selection-start-column="56" selection-end-line="54" selection-end-column="56" />
+              <caret line="60" column="26" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
               <folding>
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#div#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <marker date="1434625383814" expanded="true" signature="2818:2946" placeholder="..." />
-                <marker date="1434625383814" expanded="true" signature="3180:3198" placeholder="..." />
+                <element signature="n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <marker date="1434626130510" expanded="true" signature="2500:3193" placeholder="..." />
+                <marker date="1434626130510" expanded="true" signature="2730:2858" placeholder="..." />
+                <marker date="1434626130510" expanded="true" signature="3194:3212" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -727,13 +728,14 @@
     <entry file="file://$PROJECT_DIR$/views/salesforcegroups.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7684825">
-          <caret line="54" column="56" selection-start-line="54" selection-start-column="56" selection-end-line="54" selection-end-column="56" />
+          <caret line="60" column="26" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
           <folding>
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <marker date="1434625383814" expanded="true" signature="2818:2946" placeholder="..." />
-            <marker date="1434625383814" expanded="true" signature="3180:3198" placeholder="..." />
+            <element signature="n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1434626130510" expanded="true" signature="2500:3193" placeholder="..." />
+            <marker date="1434626130510" expanded="true" signature="2730:2858" placeholder="..." />
+            <marker date="1434626130510" expanded="true" signature="3194:3212" placeholder="..." />
           </folding>
         </state>
       </provider>

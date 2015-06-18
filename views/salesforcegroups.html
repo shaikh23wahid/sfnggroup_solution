@@ -52,12 +52,14 @@
                         <input type="number" min="1" max="100" class="form-control" ng-model="pageSize">
                     </div>
                 </div>
-                <div  style="border: 1px #e4e4e4 solid;" ng-show="sfGroups.length > 0">
                     <div style=""border:1px; class="col-md-4 border" dir-paginate="sfg in sfGroups |filter: {group_name: filterText} | itemsPerPage: pageSize" current-page="currentPage">
                         <h3 class="heading">
                             <a href="/{{sfg.country_short_code}}/group/{{sfg.group_unique_name}}" ></a> {{sfg.group_name}} </h3>
                         <p class="sub-heading">
                             Country <span class="bullet alt-color-groups">:</span> {{sfg.country_name}}
+                        </p>
+                        <p>
+                            {{sfg.keywords}}
                         </p>
                     </div>
 
