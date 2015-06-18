@@ -4,6 +4,10 @@ module.exports=function(app)
         res.render('index.html')
     });
 
+    app.get('/:countrycode/categories',function(req,res){
+        res.render('categories.html')
+    });
+
     app.get('/:countrycode/product-categories/',function(req,res){
         res.render('productcategorylist.html')
     });
