@@ -2,6 +2,7 @@
 <html ng-app="bootstrapApp">
 <head>
     <title>Pureprofile</title>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <!-- Scripts -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -9,23 +10,40 @@
 
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-
+    <link rel="stylesheet" href="../../../css/pptemplate.css" />
     <script src="../../../category.js"></script>
 </head>
 <body>
-<div class="container" ng-controller="cat100Ctrl">
+    <div class="pp-topbar navbar-fixed-top" style="height: 60px;">
+        <div class="container">
+            <div class="row">
+                <div class="span2">
+                    <a id="backurl" href="/">
+                        <img class="topbar-logo" alt="pureprofile.com" title="pureprofile.com" src="//images.pureprofile.com/cloud/images/pp_logo.png">
+                    </a>
+                </div>
+                <div class="span5 topbar-info">
+                    <div class="topbar-account-menu pull-right">
 
-    <div class="row">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pp-colorbar profile navbar-fixed-top">
+    </div>
+    <div class="pp-colorbar navbar-fixed-top group">
+    </div>
+<div class="container" ng-controller="cat100Ctrl" style="margin-top:80px;">
+           <div class="row">
         <div class="col-md-4" ng-repeat="cat in topCategories">
             <h4>
                <a href="/au/{{cat.category_unique_name}}" ></a> {{cat.category_text}} </h4>
             <p>
                 <a href="javascript:;" ng-show="{{cat.total_child > 0}}"  ng-click="toggleModal(cat.category_id, cat.category_hierarchy)"> Child category count : {{cat.total_child}}</a>
                 <span ng-show="{{cat.total_child == 0}}"> Child category count : {{cat.total_child}}</span>
-
             </p>
         </div>
-
         <modal visible="showModal">
             <ul>
                 <li ng-repeat="cc in childCategories">
