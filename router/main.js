@@ -8,6 +8,10 @@ module.exports=function(app)
         res.render('categories.html')
     });
 
+    app.get('/:countrycode/groups',function(req,res){
+        res.render('salesforcegroups.html')
+    });
+
     app.get('/:countrycode/product-categories/',function(req,res){
         res.render('productcategorylist.html')
     });

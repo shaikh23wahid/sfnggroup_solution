@@ -35,27 +35,27 @@
     <div class="pp-colorbar navbar-fixed-top group">
     </div>
 <div class="container" ng-controller="cat100Ctrl" style="margin-top:80px;">
-           <div class="row">
-        <div class="col-md-4" ng-repeat="cat in topCategories">
-            <h4>
-               <a href="/au/{{cat.category_unique_name}}" ></a> {{cat.category_text}} </h4>
-            <p>
-                <a href="javascript:;" ng-show="{{cat.total_child > 0}}"  ng-click="toggleModal(cat.category_id, cat.category_hierarchy)"> Child category count : {{cat.total_child}}</a>
-                <span ng-show="{{cat.total_child == 0}}"> Child category count : {{cat.total_child}}</span>
-            </p>
-        </div>
-        <modal visible="showModal">
-            <ul>
-                <li ng-repeat="cc in childCategories">
-                    <h4>
-                        <a href="/au/{{cc.category_unique_name}}" ></a> {{cc.category_text}} </h4>
-                    <p>
-                        <a href="javascript:;" ng-show="{{cc.total_child > 0}}" ng-click="refreshchildCategory(cc.category_id, cc.category_hierarchy)"> Child category count : {{cc.total_child}}</a>
-                        <span ng-show="{{cc.total_child == 0}}"> Child category count : {{cc.total_child}}</span>
-                    </p>
-                </li>
-            </ul>
-        </modal>
+        <div class="row">
+            <div class="col-md-4" ng-repeat="cat in topCategories">
+                <h4>
+                   <a href="/au/{{cat.category_unique_name}}" ></a> {{cat.category_text}} </h4>
+                <p>
+                    <a href="javascript:;" ng-show="{{cat.total_child > 0}}"  ng-click="toggleModal(cat.category_id, cat.category_hierarchy)"> Child category count : {{cat.total_child}}</a>
+                    <span ng-show="{{cat.total_child == 0}}"> Child category count : {{cat.total_child}}</span>
+                </p>
+            </div>
+            <modal visible="showModal">
+                <ul>
+                    <li ng-repeat="cc in childCategories">
+                        <h4>
+                            <a href="/au/{{cc.category_unique_name}}" ></a> {{cc.category_text}} </h4>
+                        <p>
+                            <a href="javascript:;" ng-show="{{cc.total_child > 0}}" ng-click="refreshchildCategory(cc.category_id, cc.category_hierarchy)"> Child category count : {{cc.total_child}}</a>
+                            <span ng-show="{{cc.total_child == 0}}"> Child category count : {{cc.total_child}}</span>
+                        </p>
+                    </li>
+                </ul>
+            </modal>
     </div>
 </div>
 </body>

@@ -5,11 +5,6 @@ bootstrapApp.service('catRepository', function ($http) {
         var url = "http://salesforce-python.pureprofile.com/getcategories";
         return $http.get(url);
     };
-
-    this.getchildcategories = function () {
-        var url = "http://salesforce-python.pureprofile.com/getcategories";
-        return $http.get(url);
-    };
 });
 
 bootstrapApp.controller('cat100Ctrl', function ($scope, catRepository) {

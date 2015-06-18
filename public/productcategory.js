@@ -10,7 +10,7 @@ pcApp.service('productcategoryRepository', function ($http) {
 pcApp.controller('pcCtrl', function ($scope, productcategoryRepository) {
     $scope.productCategories = [];
     $scope.currentPage = 1;
-    $scope.pageSize = 15;
+    $scope.pageSize = 12;
     $scope.isdatafetching = true;
 
     productcategoryRepository.getProductCategories().success(function (productcategoriesdata) {
