@@ -1,17 +1,17 @@
 <!doctype html>
-<html ng-app="categoryApp" ng-controller="categoryCtrl">
+<html ng-app="questiondetailsApp" ng-controller="qdCtrl">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Optimize mobile viewport -->
-    <title>{{categorydetails.category_text}}</title>
+    <title>{{questiondetails.question_test}}</title>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
     <link rel="stylesheet" href="//cloud.pureprofile.com/css/styles/PPbootstrap.css"
           type="text/css">
     <link rel="stylesheet" href="//cloud.pureprofile.com/css/styles/pp-pages.css" type="text/css">
-    <script src="../../../categorydetails.js"></script>
+    <script src="../../../questiondetails.js"></script>
     <script type="text/javascript">
-        var categoryuniquename = '<%= catuname %>';
+        var qid = '<%= questid %>';
     </script>
 </head>
 <body>
@@ -34,8 +34,8 @@
 </div>
 <div class="pp-colorbar navbar-fixed-top group">
 </div>
-<div class="wrapper" ng-init="categoryuniquename = '<%= catuname %>'">
-      <div class="container page-container group-header-section" ng-show="!isdatafetching">
+<div class="wrapper" ng-init="questionid = '<%= questid %>'">
+    <div class="container page-container group-header-section" ng-show="!isdatafetching">
         <div class="row">
             <div class="span3 aside">
                 <div class="col-box">
@@ -49,7 +49,7 @@
                     <img class="icon" src="//cloud.pureprofile.com/icons/pp-core-icons/groups-56.png"
                          alt="pureprofile group">
                     <h1 class="heading">
-                        {{categorydetails.category_text}}</h1>
+                        {{questiondetails.question_test}}</h1>
                 </div>
             </div>
             <div class="span4 post-container">
@@ -57,45 +57,33 @@
                     <img class="ico" src="//cloud.pureprofile.com/icons/profile-icons/back-arrow-24.png"
                          alt="back">
                     <h3>
-                        <a href="/au/categories">back to category list</a></h3>
+                        <a href="/au/questions">back to question list</a></h3>
                 </div>
             </div>
         </div>
     </div>
     <div class="container white-bg-content">
         <div class="row top15">
-            <div class="post-container top10" ng-if="categorydetails.child_categories.length > 0">
-                <div class="post-container top15">
-                    <table cellspacing="1px" cellpadding="1px" border="1" width="800px" style="margin-left:2%">
+            <div class="post-container top10">
+                <div class="post-container top15" style="margin-left:2%;">
+                    <p ng-show="questiondetails.answers.length == 0">{{questiondetails.answer}}</p>
+                     <table cellspacing="1px" cellpadding="1px" border="1" width="800px" style="margin-left:2%" ng-show="questiondetails.answers.length > 0">
                         <tr>
                             <th>
-                                Category ID
+                                Answer ID
                             </th>
                             <th>
-                                Category Name
-                            </th>
-                            <th>
-                                Child Category count
-                            </th>
-                            <th>
-                                Action
+                                Answer
                             </th>
                         </tr>
-                        <tr ng-show="categorydetails.child_categories.length > 0" ng-repeat="cat in categorydetails.child_categories">
+                        <tr ng-repeat="objq in questiondetails.answers">
                             <td>
-                                {{cat.category_id}}
+                                {{objq.answer_id}}
                             </td>
                             <td>
-                                {{cat.category_text}}
-                            </td>
-                            <td>
-                                {{cat.total_child}}
-                            </td>
-                            <td >
-                                <a  ng-show="cat.total_child > 0" href="/au/category/{{cat.category_unique_name}}">View</a>
+                                {{objq.answer_text}}
                             </td>
                         </tr>
-                        <tr><td colspan="4" ng-show="categorydetails.child_categories != null && categorydetails.child_categories.length == 0">No child caegories found</td></tr>
                     </table>
                 </div>
             </div>

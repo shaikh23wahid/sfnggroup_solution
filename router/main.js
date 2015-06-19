@@ -17,6 +17,20 @@ module.exports=function(app)
         res.render('salesforcegroups.html')
     });
 
+    app.get('/:countrycode/group/:group_url/',function(req,res){
+        var groupuniquename = req.param('group_url');
+        res.render('groupdetails.html',gid=groupuniquename);
+    });
+
+    app.get('/:countrycode/questions',function(req,res){
+        res.render('questions.html')
+    });
+
+    app.get('/:countrycode/question/:question_id/',function(req,res){
+        var questionid = req.param('question_id');
+        res.render('questiondetails.html',questid=questionid);
+    });
+
     app.get('/:countrycode/product-categories/',function(req,res){
         res.render('productcategorylist.html')
     });
@@ -32,11 +46,6 @@ module.exports=function(app)
     app.get('/:countrycode/product-category/:pcuniquename/',function(req,res){
         var pcuniquename = req.param('pcuniquename');
         res.render('productcategorybrands.html',pcuname=pcuniquename);
-    });
-
-    app.get('/:countrycode/group/:group_url/',function(req,res){
-        var groupuniquename = req.param('group_url');
-        res.render('groupdetails.html',gid=groupuniquename);
     });
 
     app.get('/:countrycode/brand/:branduniquename/',function(req,res){
