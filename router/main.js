@@ -17,6 +17,11 @@ module.exports=function(app)
         res.render('salesforcegroups.html')
     });
 
+    app.get('/:countrycode/sf-group/:groupuniquename/',function(req,res){
+        var groupuniquename = req.param('groupuniquename');
+        res.render('salesforcegroupdetails.html',sfgdname=groupuniquename);
+    });
+
     app.get('/:countrycode/group/:group_url/',function(req,res){
         var groupuniquename = req.param('group_url');
         res.render('groupdetails.html',gid=groupuniquename);

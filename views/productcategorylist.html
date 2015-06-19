@@ -3,7 +3,9 @@
 <html ng-app="pcApp">
 <head>
     <title>Pureprofile Groups </title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
     <script src="https://code.angularjs.org/1.3.0/angular.min.js"></script>
     <link rel="stylesheet" href="//cloud.pureprofile.com/css/styles/PPbootstrap.css"
           type="text/css">
@@ -13,26 +15,7 @@
 </head>
 <body>
 <div class="wrapper">
-    <div class="pp-topbar navbar-fixed-top" style="height: 60px;">
-        <div class="container">
-            <div class="row">
-                <div class="span2">
-                    <a id="backurl" href="/">
-                        <img class="topbar-logo" alt="pureprofile.com" title="pureprofile.com" src="//images.pureprofile.com/cloud/images/pp_logo.png">
-                    </a>
-                </div>
-                <div class="span5 topbar-info">
-                    <div class="topbar-account-menu pull-right">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="pp-colorbar profile navbar-fixed-top">
-    </div>
-    <div class="pp-colorbar navbar-fixed-top group">
-    </div>
+    <div ng-include src="'../../../menu.html'"></div>
     <br>
     <div class="row">
         <div class="container page-container">

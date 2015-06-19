@@ -1,10 +1,9 @@
 <!doctype html>
-<html ng-app="questiondetailsApp" ng-controller="qdCtrl">
+<html ng-app="sfgdApp" ng-controller="sfgdCtrl">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Optimize mobile viewport -->
-    <title>{{questiondetails.question_test}}</title>
+     <title>{{sfgroupdetails.group_name}}</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
@@ -12,21 +11,21 @@
     <link rel="stylesheet" href="//cloud.pureprofile.com/css/styles/PPbootstrap.css"
           type="text/css">
     <link rel="stylesheet" href="//cloud.pureprofile.com/css/styles/pp-pages.css" type="text/css">
-    <script src="../../../questiondetails.js"></script>
+    <script src="../../../sfgroupdetails.js"></script>
     <script type="text/javascript">
-        var qid = '<%= questid %>';
+        var sfgroupuniquename = '<%= sfgdname %>';
     </script>
 </head>
 <body>
 <div ng-include src="'../../../menu.html'"></div>
-<div class="wrapper" ng-init="questionid = '<%= questid %>'">
+<div class="wrapper" ng-init="sfgroupuniquename = '<%= sfgdname %>'">
     <div class="container page-container group-header-section" ng-show="!isdatafetching">
         <div class="row">
             <div class="span3 aside">
                 <div class="col-box">
                     <div class="group-image">
                         <img src="http://cloud.pureprofile.com/groups/main/live/201306261455260386196_2795712545042589588.jpg"
-                             alt="{{questiondetails.group_name}}">
+                             alt="{{sfgroupdetails.group_name}}">
                     </div>
                 </div>
             </div>
@@ -35,8 +34,9 @@
                     <img class="icon" src="//cloud.pureprofile.com/icons/pp-core-icons/groups-56.png"
                          alt="pureprofile group">
                     <h1 class="heading">
-                        {{questiondetails.group_name}}</h1>
-                    <p>{{questiondetails.description}}</p>
+                        {{sfgroupdetails.group_name}}</h1>
+
+                    <p>{{sfgroupdetails.description}}</p>
                 </div>
             </div>
             <div class="span4 post-container">
@@ -44,7 +44,7 @@
                     <img class="ico" src="//cloud.pureprofile.com/icons/profile-icons/back-arrow-24.png"
                          alt="back">
                     <h3>
-                        <a href="/au/questions">back to question list</a></h3>
+                        <a href="/au/groups">back to question list</a></h3>
                 </div>
             </div>
         </div>
@@ -53,8 +53,7 @@
         <div class="row top15">
             <div class="post-container top10">
                 <div class="post-container top15" style="margin-left:2%;">
-                    <p ng-show="questiondetails.answers.length == 0" class="ng-binding">{{questiondetails.answer}}</p>
-                     <table cellspacing="1px" cellpadding="1px" border="1" width="800px" style="margin-left:2%" ng-show="questiondetails.answers.length > 0">
+                    <table cellspacing="1px" cellpadding="1px" border="1" width="800px" style="margin-left:2%" ng-show="sfgroupdetails.questions.length > 0">
                         <tr>
                             <th>
                                 Answer ID
@@ -63,12 +62,15 @@
                                 Answer
                             </th>
                         </tr>
-                        <tr ng-repeat="objq in questiondetails.answers">
+                        <tr ng-repeat="objq in sfgroupdetails.questions">
                             <td>
-                                {{objq.answer_id}}
+                                {{objq.question_text}}
                             </td>
                             <td>
-                                {{objq.answer_text}}
+                                <span ng-show="objA.answers.length == 0">{{objq.answer_text}}</span>
+                                <ul>
+                                   <li ng-repeat="objA in objq.answers">{{objA.answer_text}}</li>
+                               </ul>
                             </td>
                         </tr>
                     </table>

@@ -12,25 +12,7 @@
     <script src="../../../dirPagination.js"></script>
 </head>
 <body>
-<div class="pp-topbar navbar-fixed-top" style="height: 60px;">
-    <div class="container">
-        <div class="row">
-            <div class="span2">
-                <a id="backurl" href="/">
-                    <img class="topbar-logo" alt="pureprofile.com" title="pureprofile.com" src="//images.pureprofile.com/cloud/images/pp_logo.png">
-                </a>
-            </div>
-            <div class="span5 topbar-info">
-                <div class="topbar-account-menu pull-right">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="pp-colorbar profile navbar-fixed-top">
-</div>
-<div class="pp-colorbar navbar-fixed-top group">
-</div>
+<div ng-include src="'../../../menu.html'"></div>
 <div class="container" style="margin-left: 19%; margin-top: 80px;" ng-show="isdatafetching">
     <div class="row">
         <img src="http://newgroupsapp.pureprofile.com/images/spiffygif_30x30.gif" /></div>
