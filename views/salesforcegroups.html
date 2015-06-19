@@ -53,16 +53,10 @@
             <div class="panel-body">
                 <table cellspacing="1px" cellpadding="1px" border="1" width="800px">
                     <tr>
-                        <th>
-                            Group ID
-                        </th>
-                        <th>
+                         <th>
                             Group Name
                         </th>
-                        <th>
-                            Description
-                        </th>
-                        <th>
+                           <th>
                             Keywords
                         </th>
                         <th>
@@ -74,15 +68,10 @@
                     </tr>
                     <tr dir-paginate="sfg in sfGroups |filter: {group_name: filterText} | itemsPerPage: pageSize"
                         current-page="currentPage">
-                        <td>
-                            {{sfg.group_id}}
-                        </td>
-                        <td>
+                           <td>
                             {{sfg.group_name}}
                         </td>
-                        <td>
-                            {{sfg.description}}
-                        </td>
+
                         <td>
                             {{sfg.keywords}}
                         </td>

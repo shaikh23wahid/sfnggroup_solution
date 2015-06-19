@@ -8,6 +8,11 @@ module.exports=function(app)
         res.render('categories.html')
     });
 
+    app.get('/:countrycode/category/:categoryuniquename/',function(req,res){
+        var cuniquename = req.param('categoryuniquename');
+        res.render('categorydetails.html',catuname=cuniquename);
+    });
+
     app.get('/:countrycode/groups',function(req,res){
         res.render('salesforcegroups.html')
     });

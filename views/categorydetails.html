@@ -1,84 +1,106 @@
-<!-- index.html -->
 <!doctype html>
-
-<!-- ASSIGN OUR ANGULAR MODULE -->
-<html ng-app="brandApp" ng-controller="brandCtrl">
+<html ng-app="categoryApp" ng-controller="categoryCtrl">
 <head>
-    <!-- META -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Optimize mobile viewport -->
     <title>{{branddetails.brandname}}</title>
-    <!-- SPELLS -->
-    <script src="https://code.angularjs.org/1.3.0/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
     <link rel="stylesheet" href="//cloud.pureprofile.com/css/styles/PPbootstrap.css"
           type="text/css">
     <link rel="stylesheet" href="//cloud.pureprofile.com/css/styles/pp-pages.css" type="text/css">
     <script src="../../../categorydetails.js"></script>
-
     <script type="text/javascript">
-        var categoryquename = '<%= catuname %>';
+        var categoryuniquename = '<%= catuname %>';
     </script>
 </head>
 <body>
-<div class="wrapper"  ng-init="categoryuniquename = '<%= catuname %>'" >
-    <div ng-include="'/header'"></div>
-    <div class="container page-container group-header-section" ng-show="isdatafetching">
-        <img style="margin-left:50%;" src="http://newgroupsapp.pureprofile.com/images/spiffygif_30x30.gif" />
-    </div>
-    <div class="container page-container group-header-section" ng-show="!isdatafetching">
+<div class="pp-topbar navbar-fixed-top" style="height: 60px;">
+    <div class="container">
         <div class="row">
-            <div class="span3 aside">
-                <div class="col-box">
-                    <div class="group-image">
-                        <img ng-src="{{branddetails.brand_image_url__c}}"
-                             alt="{{branddetails.name}}">
-                    </div>
-                </div>
-            </div> 
-            <div class="span6 middle-content">
-                <div class="page-header">
-                    <img class="icon" src="//cloud.pureprofile.com/icons/pp-core-icons/groups-56.png"
-                         alt="pureprofile group">
-                    <h1 class="heading">
-                        {{branddetails.name}}</h1>
-                    <p class="sub-heading">
-                        Brand <span class="bullet alt-color-groups">•</span> {{branddetails.currencyisocode}}
-                    </p>
-                </div>
-                <div class="post-container">
-                    <div class="post pg-desc">
-                        <p ng-if="branddetails.linkedin_url__c">
-                            {{branddetails.linkedin_url__c}}
-                        </p>
-                        <p>
-                        <p ng-if="branddetails.main_brand_url__c">
-                            {{branddetails.main_brand_url__c}}
-                        </p>
-                        <p ng-if="branddetails.official_facebook_page__c">
-                            {{branddetails.official_facebook_page__c}}
-                        </p>
-                        <p ng-if="branddetails.twitter_handle__c">
-                            {{branddetails.twitter_handle__c}}
-                        </p>
-                        <p ng-if="branddetails.wikipedia_url__c">
-                            {{branddetails.wikipedia_url__c}}
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="span4 post-container">
-                        <div class="back-link group-page">
-                            <img class="ico" src="//cloud.pureprofile.com/icons/profile-icons/back-arrow-24.png"
-                                 alt="back">
-                            <h3>
-                                <a href="/">back to group list</a></h3>
-                        </div>
-                    </div>
+            <div class="span2">
+                <a id="backurl" href="/">
+                    <img class="topbar-logo" alt="pureprofile.com" title="pureprofile.com" src="//images.pureprofile.com/cloud/images/pp_logo.png">
+                </a>
+            </div>
+            <div class="span5 topbar-info">
+                <div class="topbar-account-menu pull-right">
                 </div>
             </div>
         </div>
     </div>
 </div>
+<div class="pp-colorbar profile navbar-fixed-top">
+</div>
+<div class="pp-colorbar navbar-fixed-top group">
+</div>
+<div class="wrapper" ng-init="categoryuniquename = '<%= catuname %>'">
+      <div class="container page-container group-header-section" ng-show="!isdatafetching">
+        <div class="row">
+            <div class="span3 aside">
+                <div class="col-box">
+                    <div class="group-image">
+                        <img src="http://cloud.pureprofile.com/groups/main/live/201306261455260386196_2795712545042589588.jpg" alt="{{categorydetails.category_text}}">
+                    </div>
+                </div>
+            </div>
+            <div class="span6 middle-content">
+                <div class="page-header">
+                    <img class="icon" src="//cloud.pureprofile.com/icons/pp-core-icons/groups-56.png"
+                         alt="pureprofile group">
+                    <h1 class="heading">
+                        {{categorydetails.category_text}}</h1>
+                </div>
+            </div>
+            <div class="span4 post-container">
+                <div class="back-link group-page">
+                    <img class="ico" src="//cloud.pureprofile.com/icons/profile-icons/back-arrow-24.png"
+                         alt="back">
+                    <h3>
+                        <a href="/au/categories">back to category list</a></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container white-bg-content">
+        <div class="row top15">
+            <div class="post-container top10" ng-if="categorydetails.child_categories.length > 0">
+                <div class="post-container top15">
+                    <table cellspacing="1px" cellpadding="1px" border="1" width="800px" style="margin-left:2%">
+                        <tr>
+                            <th>
+                                Category ID
+                            </th>
+                            <th>
+                                Category Name
+                            </th>
+                            <th>
+                                Child Category count
+                            </th>
+                            <th>
+                                Action
+                            </th>
+                        </tr>
+                        <tr ng-show="categorydetails.child_categories.length > 0" ng-repeat="cat in categorydetails.child_categories">
+                            <td>
+                                {{cat.category_id}}
+                            </td>
+                            <td>
+                                {{cat.category_text}}
+                            </td>
+                            <td>
+                                {{cat.total_child}}
+                            </td>
+                            <td>
+                                <a href="/au/category/{{cat.category_unique_name}}">View</a>
+                            </td>
+                        </tr>
+                        <tr><td colspan="4" ng-show="categorydetails.child_categories != null && categorydetails.child_categories.length == 0">No child caegories found</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
