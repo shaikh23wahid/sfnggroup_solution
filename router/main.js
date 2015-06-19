@@ -35,6 +35,22 @@ module.exports=function(app)
         res.render('productcategorylist.html')
     });
 
+    app.get('/:countrycode/market-categories/',function(req,res){
+        res.render('marketproductcategories.html')
+    });
+
+    app.get('/:countrycode/websites/',function(req,res){
+        res.render('websites.html')
+    });
+
+    app.get('/:countrycode/videos/',function(req,res){
+        res.render('videos.html')
+    });
+
+    app.get('/:countrycode/places/',function(req,res){
+        res.render('places.html')
+    });
+
     app.get('/:countrycode/celebrities/',function(req,res){
         res.render('celebritylist.html')
     });
