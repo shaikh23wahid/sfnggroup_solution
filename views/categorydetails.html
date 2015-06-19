@@ -91,8 +91,8 @@
                             <td>
                                 {{cat.total_child}}
                             </td>
-                            <td>
-                                <a href="/au/category/{{cat.category_unique_name}}">View</a>
+                            <td >
+                                <a  ng-show="cat.total_child > 0" href="/au/category/{{cat.category_unique_name}}">View</a>
                             </td>
                         </tr>
                         <tr><td colspan="4" ng-show="categorydetails.child_categories != null && categorydetails.child_categories.length == 0">No child caegories found</td></tr>

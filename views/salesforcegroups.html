@@ -62,23 +62,22 @@
                         <th>
                             Currency
                         </th>
-                        <th>
+                        <th ng-hide="true">
                             Action
                         </th>
                     </tr>
                     <tr dir-paginate="sfg in sfGroups |filter: {group_name: filterText} | itemsPerPage: pageSize"
                         current-page="currentPage">
-                           <td>
+                        <td>
                             {{sfg.group_name}}
                         </td>
-
                         <td>
                             {{sfg.keywords}}
                         </td>
                         <td>
                             {{sfg.currency_iso_code}}
                         </td>
-                        <td>
+                        <td ng-hide="true">
                             <a href="/{{sfg.country_short_code}}/group/{{sfg.group_unique_name}}">View</a>
                         </td>
                     </tr>

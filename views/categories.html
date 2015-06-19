@@ -66,19 +66,19 @@
                             Action
                         </th>
                     </tr>
-                    <tr dir-paginate="sfg in categories |filter: {category_text: filterText} | itemsPerPage: pageSize"
+                    <tr dir-paginate="objc in categories |filter: {category_text: filterText} | itemsPerPage: pageSize"
                         current-page="currentPage">
                         <td>
-                            {{sfg.category_id}}
+                            {{objc.category_id}}
                         </td>
                         <td>
-                            {{sfg.category_text}}
+                            {{objc.category_text}}
                         </td>
                         <td>
-                            {{sfg.total_child}}
+                            {{objc.total_child}}
                         </td>
                         <td>
-                            <a href="/au/category/{{sfg.category_unique_name}}">View</a>
+                            <a ng-show="objc.total_child > 0" href="/au/category/{{objc.category_unique_name}}">View</a>
                         </td>
                     </tr>
                 </table>
