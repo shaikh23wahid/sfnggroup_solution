@@ -1,61 +1,95 @@
 <!DOCTYPE html>
 <html ng-app="bootstrapApp">
 <head>
-    <title>Pureprofile</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <!-- Scripts -->
+    <title>Pureprofile Categories</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <link rel="stylesheet" href="../../../css/pptemplate.css" />
+    <link rel="stylesheet" href="../../../style.css" />
     <script src="../../../category.js"></script>
+    <script src="../../../dirPagination.js"></script>
 </head>
 <body>
-    <div class="pp-topbar navbar-fixed-top" style="height: 60px;">
-        <div class="container">
-            <div class="row">
-                <div class="span2">
-                    <a id="backurl" href="/">
-                        <img class="topbar-logo" alt="pureprofile.com" title="pureprofile.com" src="//images.pureprofile.com/cloud/images/pp_logo.png">
-                    </a>
-                </div>
-                <div class="span5 topbar-info">
-                    <div class="topbar-account-menu pull-right">
-
-                    </div>
+<div class="pp-topbar navbar-fixed-top" style="height: 60px;">
+    <div class="container">
+        <div class="row">
+            <div class="span2">
+                <a id="backurl" href="/">
+                    <img class="topbar-logo" alt="pureprofile.com" title="pureprofile.com" src="//images.pureprofile.com/cloud/images/pp_logo.png">
+                </a>
+            </div>
+            <div class="span5 topbar-info">
+                <div class="topbar-account-menu pull-right">
                 </div>
             </div>
         </div>
     </div>
-    <div class="pp-colorbar profile navbar-fixed-top">
-    </div>
-    <div class="pp-colorbar navbar-fixed-top group">
-    </div>
-<div class="container" ng-controller="cat100Ctrl" style="margin-top:80px;">
-        <div class="row">
-            <div class="col-md-4" ng-repeat="cat in topCategories">
-                <h4>
-                   <a href="/au/{{cat.category_unique_name}}" ></a> {{cat.category_text}} </h4>
-                <p>
-                    <a href="javascript:;" ng-show="{{cat.total_child > 0}}"  ng-click="toggleModal(cat.category_id, cat.category_hierarchy)"> Child category count : {{cat.total_child}}</a>
-                    <span ng-show="{{cat.total_child == 0}}"> Child category count : {{cat.total_child}}</span>
-                </p>
+</div>
+<div class="pp-colorbar profile navbar-fixed-top">
+</div>
+<div class="pp-colorbar navbar-fixed-top group">
+</div>
+<div class="container" style="margin-left: 19%; margin-top: 80px;" ng-show="isdatafetching">
+    <div class="row">
+        <img src="http://newgroupsapp.pureprofile.com/images/spiffygif_30x30.gif" /></div>
+</div>
+<div class="container" style="margin-left: 14%; margin-top: 80px;" ng-show="!isdatafetching">
+    <div ng-controller="categoryCtrl">
+        <div class="row" ng-show="categories.length > 0">
+            <div class="col-xs-6" style="margin-left: 5px;">
+                <label for="search">
+                    Search:</label>
+                <input ng-model="filterText" id="search" class="form-control" placeholder="Filter text">
             </div>
-            <modal visible="showModal">
-                <ul>
-                    <li ng-repeat="cc in childCategories">
-                        <h4>
-                            <a href="/au/{{cc.category_unique_name}}" ></a> {{cc.category_text}} </h4>
-                        <p>
-                            <a href="javascript:;" ng-show="{{cc.total_child > 0}}" ng-click="refreshchildCategory(cc.category_id, cc.category_hierarchy)"> Child category count : {{cc.total_child}}</a>
-                            <span ng-show="{{cc.total_child == 0}}"> Child category count : {{cc.total_child}}</span>
-                        </p>
-                    </li>
-                </ul>
-            </modal>
+            <div class="col-xs-6" ng-hide="true">
+                <label for="search">
+                    items per page:</label>
+                <input type="number" min="1" max="100" class="form-control" ng-model="pageSize">
+            </div>
+        </div>
+        <div class="row panel-default" ng-show="categories.length > 0">
+            <div class="panel-body">
+                <table cellspacing="1px" cellpadding="1px" border="1" width="800px">
+                    <tr>
+                        <th>
+                            Category ID
+                        </th>
+                        <th>
+                            Category Name
+                        </th>
+                        <th>
+                            Child Category count
+                        </th>
+                        <th>
+                            Action
+                        </th>
+                    </tr>
+                    <tr dir-paginate="sfg in categories |filter: {category_text: filterText} | itemsPerPage: pageSize"
+                        current-page="currentPage">
+                        <td>
+                            {{sfg.category_id}}
+                        </td>
+                        <td>
+                            {{sfg.category_text}}
+                        </td>
+                        <td>
+                            {{sfg.total_child}}
+                        </td>
+                        <td>
+                            <a href="/au/category/{{sfg.category_unique_name}}">View</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div ng-controller="OtherController" class="row other-controller" ng-show="!isdatafetching">
+        <div class="text-center">
+            <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)"
+                                     template-url="../../../dirPagination.tpl.html"></dir-pagination-controls>
+        </div>
     </div>
 </div>
 </body>

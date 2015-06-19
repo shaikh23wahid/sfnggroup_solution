@@ -11,7 +11,7 @@ sfgroupsApp.controller('sfgroupsCtrl', function ($scope, sfgroupsRepository) {
     $scope.sfGroups = [];
 
     $scope.currentPage = 1;
-    $scope.pageSize = 15;
+    $scope.pageSize = 10;
     $scope.isdatafetching = true;
 
     sfgroupsRepository.getsalesforcegroups().success(function (sfgroupsdata) {
