@@ -43,7 +43,7 @@
                                 <th>Currency</th>
                                 <th>Action</th>
                             </tr>
-                            <tr dir-paginate="pc in productCategories |filter: {name: filterText} | itemsPerPage: pageSize" current-page="currentPage">
+                            <tr dir-paginate="pc in productCategories |filter: filterText | itemsPerPage: pageSize" current-page="currentPage">
                                 <td>{{pc.sfid}}</td>
                                  <td>{{pc.name}}</td>
                                 <td>{{pc.currencyisocode}}</td>

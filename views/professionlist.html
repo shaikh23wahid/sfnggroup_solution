@@ -43,7 +43,7 @@
                                 <th>Profession Keywords</th>
                                 <th class="hide">Action</th>
                             </tr>
-                            <tr dir-paginate="pc in professions |filter: {profession_name: filterText} | itemsPerPage: pageSize" current-page="currentPage">
+                            <tr dir-paginate="pc in professions |filter: filterText | itemsPerPage: pageSize" current-page="currentPage">
                                 <td>{{pc.profession_id}}</td>
                                 <td>{{pc.profession_name}}</td>
                                 <td>{{pc.profession_keywords}}</td>

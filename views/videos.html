@@ -46,7 +46,7 @@
                             Video Type
                         </th>
                     </tr>
-                    <tr dir-paginate="web in videos |filter: {video_name: filterText} | itemsPerPage: pageSize"
+                    <tr dir-paginate="web in videos |filter: filterText | itemsPerPage: pageSize"
                         current-page="currentPage">
                         <td>
                             {{web.video_id}}

@@ -51,7 +51,7 @@
                             Product Category Name
                         </th>
                     </tr>
-                    <tr dir-paginate="mpc in mpcategories |filter: {market_name: filterText} | itemsPerPage: pageSize"
+                    <tr dir-paginate="mpc in mpcategories |filter: filterText | itemsPerPage: pageSize"
                         current-page="currentPage">
                         <td>
                             {{mpc.category_id}}

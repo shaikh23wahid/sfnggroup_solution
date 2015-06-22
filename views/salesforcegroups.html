@@ -49,7 +49,7 @@
                             Action
                         </th>
                     </tr>
-                    <tr dir-paginate="sfg in sfGroups |filter: {group_name: filterText} | itemsPerPage: pageSize"
+                    <tr dir-paginate="sfg in sfGroups |filter: filterText | itemsPerPage: pageSize"
                         current-page="currentPage">
                         <td>
                             {{sfg.group_name}}

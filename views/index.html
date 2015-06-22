@@ -47,7 +47,7 @@
                        <th>Country</th>
                        <th>Action</th>
                    </tr>
-                   <tr dir-paginate="gd in groupData |filter:{groupname : txtFilter} | itemsPerPage: pageSize" current-page="currentPage">
+                   <tr dir-paginate="gd in groupData |filter: txtFilter | itemsPerPage: pageSize" current-page="currentPage">
                        <td>{{gd.groupid}}</td>
                        <td><img src="{{gd.groupthumbnailurl}}" alt="{{gd.group_name}}" style="width:120px;"></td>
                        <td>{{gd.groupname}}</td>

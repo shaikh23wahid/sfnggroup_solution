@@ -45,7 +45,7 @@
                             Action
                         </th>
                     </tr>
-                    <tr dir-paginate="objq in questions |filter: {question_test: filterText} | itemsPerPage: pageSize"
+                    <tr dir-paginate="objq in questions |filter: filterText | itemsPerPage: pageSize"
                         current-page="currentPage">
                         <td>
                             {{objq.question_id}}

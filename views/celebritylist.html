@@ -42,7 +42,7 @@
                                 <th>Celebrity Type</th>
                                 <th class="hide">Action</th>
                             </tr>
-                            <tr dir-paginate="pc in celebrities |filter: {celebrity_name: filterText} | itemsPerPage: pageSize" current-page="currentPage">
+                            <tr dir-paginate="pc in celebrities |filter: filterText | itemsPerPage: pageSize" current-page="currentPage">
                                 <td>{{pc.celebrity_id}}</td>
                                 <td>{{pc.celebrity_name}}</td>
                                 <td>{{pc.celebrity_type}}</td>

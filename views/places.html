@@ -43,7 +43,7 @@
                             Video Name
                         </th>
                     </tr>
-                    <tr dir-paginate="web in places |filter: {place_name: filterText} | itemsPerPage: pageSize"
+                    <tr dir-paginate="web in places |filter: filterText | itemsPerPage: pageSize"
                         current-page="currentPage">
                         <td>
                             {{web.place_id}}

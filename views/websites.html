@@ -46,7 +46,7 @@
                             Main Domain Url
                         </th>
                     </tr>
-                    <tr dir-paginate="web in websites |filter: {website_name: filterText} | itemsPerPage: pageSize"
+                    <tr dir-paginate="web in websites |filter: filterText | itemsPerPage: pageSize"
                         current-page="currentPage">
                         <td>
                             {{web.website_id}}

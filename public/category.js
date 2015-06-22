@@ -7,7 +7,10 @@ bootstrapApp.service('catRepository', function ($http) {
     };
 });
 
+
+
 bootstrapApp.controller('categoryCtrl', function ($scope, catRepository) {
+    $scope.filteredCategories = [];
     $scope.categories = [];
 
     $scope.currentPage = 1;
@@ -16,8 +19,21 @@ bootstrapApp.controller('categoryCtrl', function ($scope, catRepository) {
 
     catRepository.getCategories().success(function (categorydata) {
         $scope.categories = categorydata.categories;
+        $scope.filteredCategories = categorydata.categories;
         $scope.isdatafetching = false;
     });
+
+    $scope.filtercategory = function(searchText){
+        if(searchText != undefined && searchText!='') {
+            var filtereddata = _.filter($scope.filteredCategories, function (item) {
+                return item.category_text == searchText || item.total_child == searchText;
+            })
+
+            $scope.categories = filtereddata;
+        }
+
+       return  $scope.categories;
+    }
 
     $scope.pageChangeHandler = function(num) {
         console.log('product category page changed to ' + num);
