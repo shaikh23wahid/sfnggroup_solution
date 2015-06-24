@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="groupchartApp">
+<head>
+    <title>Pureprofile Group Chart</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <script src="../../../groupchart.js"></script>
+    <style>
+        .bar
+        {
+            fill: steelblue;
+        }
+
+        .axis text
+        {
+            font: 10px sans-serif;
+        }
+
+        .axis path, .axis line
+        {
+            fill: none;
+            stroke: #000;
+            shape-rendering: crispEdges;
+        }
+
+        .x.axis path
+        {
+            display: none;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+</head>
+<body>
+<div class="container" ng-controller="gcCtrl">
+    <div class="row">
+        <h2>where does this group live?</h2>
+    </div>
+    <div class="row">
+        <svg id="groupchart1" class="chart"></svg>
+    </div>
+
+    <div class="row">
+        <h2>where does this group live?</h2>
+    </div>
+    <div class="row">
+        <svg id="groupchart2" class="chart"></svg>
+    </div>
+</div>
+</body>
+</html>

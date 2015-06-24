@@ -64,6 +64,10 @@ module.exports=function(app)
         res.render('professionlist.html')
     });
 
+    app.get('/:countrycode/bar-charts/',function(req,res){
+        res.render('groupcharts.html')
+    });
+
     app.get('/:countrycode/product-category/:pcuniquename/',function(req,res){
         var pcuniquename = req.param('pcuniquename');
         res.render('productcategorybrands.html',pcuname=pcuniquename);
