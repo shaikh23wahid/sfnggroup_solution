@@ -19,8 +19,7 @@
 </head>
 <body>
 <div ng-include src="'../../../menu.html'"></div>
-<div class="wrapper" ng-init="questionid = '<%= questid %>'">
-    <div class="container page-container group-header-section" ng-show="!isdatafetching">
+    <div class="container page-container group-header-section" ng-show="!isdatafetching" ng-init="questionid = '<%= questid %>'">
         <div class="row">
             <div class="span3 aside">
                 <div class="col-box">
@@ -53,8 +52,10 @@
         <div class="row top15">
             <div class="post-container top10">
                 <div class="post-container top15" style="margin-left:2%;">
+                    <div class="table-responsive">
                     <p ng-show="questiondetails.answers.length == 0" class="ng-binding">{{questiondetails.answer}}</p>
-                     <table cellspacing="1px" cellpadding="1px" border="1" width="800px" style="margin-left:2%" ng-show="questiondetails.answers.length > 0">
+                     <table class="table" style="border:1px;width:800px;margin-left:5%" ng-show="questiondetails.answers.length > 0">
+                         <thead>
                         <tr>
                             <th>
                                 Answer ID
@@ -63,6 +64,8 @@
                                 Answer
                             </th>
                         </tr>
+                        </thead>
+                         <tbody>
                         <tr ng-repeat="objq in questiondetails.answers">
                             <td>
                                 {{objq.answer_id}}
@@ -71,11 +74,12 @@
                                 {{objq.answer_text}}
                             </td>
                         </tr>
+                         </tbody>
                     </table>
+                        </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </body>
 </html>

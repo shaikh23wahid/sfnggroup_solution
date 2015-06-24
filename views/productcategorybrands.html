@@ -1,14 +1,17 @@
 <!-- index.html -->
 <!doctype html>
-
 <!-- ASSIGN OUR ANGULAR MODULE -->
-<html ng-app="brandsApp"  ng-init="Groupuniquname = '<%= pcuname %>'"  ng-controller="brandsCtrl">
+<html ng-app="brandsApp" ng-init="Groupuniquname = '<%= pcuname %>'" ng-controller="brandsCtrl">
 <head>
     <!-- META -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Optimize mobile viewport -->
     <title>{{productcategorydetails.name}}</title>
     <!-- SPELLS -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
     <script src="https://code.angularjs.org/1.3.0/angular.min.js"></script>
     <link rel="stylesheet" href="//cloud.pureprofile.com/css/styles/PPbootstrap.css"
           type="text/css">
@@ -20,97 +23,97 @@
 </head>
 <!-- SET THE CONTROLLER AND GET ALL TODOS -->
 <body>
-<div class="wrapper">
-    <div ng-include="'/header'"></div>
-    <div class="container page-container group-header-section" ng-show="isdatafetching">
-        <img style="margin-left:50%;" src="http://newgroupsapp.pureprofile.com/images/spiffygif_30x30.gif" />
-    </div>
-    <div class="container page-container group-header-section" ng-show="!isdatafetching">
-        <div class="row">
-            <!-- Group image -->
-            <div class="span3 aside">
-                <div class="col-box">
-                    <div class="group-image">
-                        <img ng-src="http://cloud.pureprofile.com/groups/main/live/201306261455260386196_2795712545042589588.jpg"
-                             alt="{{productcategorydetails.name}}">
-                    </div>
-                </div>
-            </div>
-            <!-- Content -->
-            <div class="span6 middle-content">
-                <div class="page-header">
-                    <img class="icon" src="//cloud.pureprofile.com/icons/pp-core-icons/groups-56.png"
-                         alt="pureprofile group">
-                    <h1 class="heading">
-                        {{productcategorydetails.name}}</h1>
-                    <p class="sub-heading">
-                        Product Category <span class="bullet alt-color-groups">•</span> {{productcategorydetails.currencyisocode}}
-                    </p>
-                </div>
-                <div class="row">
-                    <div class="span4 post-container">
-                        <div class="back-link group-page">
-                            <img class="ico" src="//cloud.pureprofile.com/icons/profile-icons/back-arrow-24.png"
-                                 alt="back">
-                            <h3>
-                                <a href="/au/product-categories">back to product category list</a></h3>
-                        </div>
-                    </div>
+<div ng-include src="'../../../menu.html'">
+</div>
+<div  ng-init="sfgroupuniquename = '<%= pcuname %>'" class="container page-container group-header-section" style="margin-top:50px;" ng-show="!isdatafetching">
+    <div class="row">
+        <!-- Group image -->
+        <div class="span3 aside">
+            <div class="col-box">
+                <div class="group-image">
+                    <img ng-src="http://cloud.pureprofile.com/groups/main/live/201306261455260386196_2795712545042589588.jpg"
+                         alt="{{productcategorydetails.name}}">
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container white-bg-content"  ng-show="!isdatafetching">
-        <div class="row top15">
-            <div class="span9 middle-content">
-                <!-- end of row -->
-                <div class="post-container">
-                    <div class="pg-section-heading">
-                        <img src="//cloud.pureprofile.com/icons/pp-core-icons/brands-24.png" alt="Brands">
+        <!-- Content -->
+        <div class="span6 middle-content">
+            <div class="page-header">
+                <img class="icon" src="//cloud.pureprofile.com/icons/pp-core-icons/groups-56.png"
+                     alt="pureprofile group">
+                <h1 class="heading">
+                    {{productcategorydetails.name}}</h1>
+                <p class="sub-heading">
+                    Product Category <span class="bullet alt-color-groups">•</span> {{productcategorydetails.currencyisocode}}
+                </p>
+            </div>
+            <div class="row">
+                <div class="span4 post-container">
+                    <div class="back-link group-page">
+                        <img class="ico" src="//cloud.pureprofile.com/icons/profile-icons/back-arrow-24.png"
+                             alt="back">
                         <h3>
-                            Brands
-                            <br>
-                        </h3>
-                    </div>
-                    <div class="pg-text-copy" style="color: #777777;">
-                        <p>
-                            When you share something about yourself, you can cannect to brands that are relevant to you and your lifestyle.
-                            <label style="color:blue;"> your profile to see hom many brands you are connected to</label>.
-                        </p>
+                            <a href="/au/product-categories">back to product category list</a></h3>
                     </div>
                 </div>
-                <div class="post-container top10" ng-if="productcategorydetails.brands.length == 0">
-                    <h2>
-                        No Brand Found
-                    </h2>
-                </div>
-                  <div class="post-container top10" ng-if="productcategorydetails.brands.length > 0">
-                    <div class="post-container top15">
-                        <div class="brand-grid-container top15">
-                            <ul class="brand-row">
-                                <li ng-repeat="brand in productcategorydetails.brands" class="brand-entity " data-original-title="{{brand.brandname}}" ng-class="$index % 4 == 0 && 'brand-entity last-item' || 'brand-entity'">
-                                    <div class="brand-image-holder">
-                                        <div class="brand-image">
-                                            <a href="/au/brand/{{brand.unique_name}}"><img src="{{brand.brand_image_url__c}}" alt="{{brand.name}}"></a>
-                                        </div>
-                                    </div>
-                                    <div class="text-holder">
-                                        <h3><a href="/au/brand/{{brand.unique_name}}">{{brand.name}}</a></h3>
-                                    </div>
-                                </li>
-                                <br>
-                                <div class="clearfix" ng-show="{{$index % 4 == 0}}"></div>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-        </div>
-        <div class="push">
         </div>
     </div>
 </div>
-<div class="pp-footer" ng-include="'/footer'"></div>
+<div class="container white-bg-content" ng-show="!isdatafetching">
+    <div class="row top15">
+        <div class="span9 middle-content">
+            <!-- end of row -->
+            <div class="post-container">
+                <div class="pg-section-heading">
+                    <img src="//cloud.pureprofile.com/icons/pp-core-icons/brands-24.png" alt="Brands">
+                    <h3>
+                        Brands
+                        <br>
+                    </h3>
+                </div>
+                <div class="pg-text-copy" style="color: #777777;">
+                    <p>
+                        When you share something about yourself, you can cannect to brands that are relevant
+                        to you and your lifestyle.
+                        <label style="color: blue;">
+                            your profile to see hom many brands you are connected to</label>.
+                    </p>
+                </div>
+            </div>
+            <div class="post-container top10" ng-if="productcategorydetails.brands.length == 0">
+                <h2>
+                    No Brand Found
+                </h2>
+            </div>
+            <div class="post-container top10" ng-if="productcategorydetails.brands.length > 0">
+                <div class="post-container top15">
+                    <div class="brand-grid-container top15">
+                        <ul class="brand-row">
+                            <li ng-repeat="brand in productcategorydetails.brands" class="brand-entity " data-original-title="{{brand.brandname}}"
+                                ng-class="$index % 4 == 0 && 'brand-entity last-item' || 'brand-entity'">
+                                <div class="brand-image-holder">
+                                    <div class="brand-image">
+                                        <a href="/au/brand/{{brand.unique_name}}">
+                                            <img src="{{brand.brand_image_url__c}}" alt="{{brand.name}}"></a>
+                                    </div>
+                                </div>
+                                <div class="text-holder">
+                                    <h3>
+                                        <a href="/au/brand/{{brand.unique_name}}">{{brand.name}}</a></h3>
+                                </div>
+                            </li>
+                            <br>
+                            <div class="clearfix" ng-show="{{$index % 4 == 0}}">
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="push">
+    </div>
+</div>
 </body>
 </html>

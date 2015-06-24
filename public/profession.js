@@ -10,7 +10,7 @@ profApp.service('professionRepository', function ($http) {
 profApp.controller('professionCtrl', function ($scope, professionRepository) {
     $scope.professions = [];
     $scope.currentPage = 1;
-    $scope.pageSize = 15;
+    $scope.pageSize = 10;
     $scope.isdatafetching = true;
 
     professionRepository.getProfessions().success(function (professiondata) {

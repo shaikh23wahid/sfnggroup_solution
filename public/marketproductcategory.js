@@ -11,7 +11,7 @@ mpcApp.controller('mpcCtrl', function ($scope, mpcRepository) {
     $scope.mpcategories = [];
 
     $scope.currentPage = 1;
-    $scope.pageSize = 15;
+    $scope.pageSize = 10;
     $scope.isdatafetching = true;
 
     mpcRepository.getMarketProductCategory().success(function (mpcdata) {

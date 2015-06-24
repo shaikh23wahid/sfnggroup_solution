@@ -10,7 +10,7 @@ celApp.service('celebrityRepository', function ($http) {
 celApp.controller('celebrityCtrl', function ($scope, celebrityRepository) {
     $scope.celebrities = [];
     $scope.currentPage = 1;
-    $scope.pageSize = 15;
+    $scope.pageSize = 10;
     $scope.isdatafetching = true;
 
     celebrityRepository.getCelebrities().success(function (celebritiesdata) {
