@@ -8,7 +8,7 @@ groupchartApp.controller('gcCtrl', function ($scope) {
     var formatPercent = d3.format(".0%");
 
     var x = d3.scale.ordinal()
-        .rangeRoundBands([0, 300], .1);
+        .rangeRoundBands([0, 600], .3);
 
     var y = d3.scale.linear()
         .range([height, 0]);
