@@ -70,7 +70,7 @@ groupchartApp.controller('gcCtrl', function ($scope, metricgroupRepository) {
         agergroups.push(obja1);
 
         var obja2={
-            text : "12-34",
+            text : "25-34",
             percentage : parseFloat(groupmetricData.group_details.agegroup.years_25_34)
         }
         agergroups.push(obja2);
