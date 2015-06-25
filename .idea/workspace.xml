@@ -25,7 +25,7 @@
         <entry file="file://$PROJECT_DIR$/public/groupchart.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="97" column="90" selection-start-line="97" selection-start-column="90" selection-end-line="97" selection-end-column="90" />
+              <caret line="138" column="44" selection-start-line="138" selection-start-column="22" selection-end-line="138" selection-end-column="44" />
               <folding>
                 <marker date="1435217732978" expanded="true" signature="568:637" placeholder="{...}" />
                 <marker date="1435217732978" expanded="true" signature="4060:6046" placeholder="{...}" />
@@ -48,10 +48,12 @@
       <file leaf-file-name="groupcharts.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/groupcharts.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46303502">
-              <caret line="29" column="50" selection-start-line="29" selection-start-column="50" selection-end-line="29" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.16536964">
+              <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
               <folding>
-                <marker date="1435218081855" expanded="true" signature="1333:1502" placeholder="..." />
+                <element signature="n#style#0;n#strong#0;n#div#1;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1435220302657" expanded="true" signature="1333:1502" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -160,6 +162,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -277,7 +280,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -686,9 +688,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="48" column="14" selection-start-line="21" selection-start-column="8" selection-end-line="48" selection-end-column="14" />
-          <folding>
-            <element signature="n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -717,7 +716,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="68" column="50" selection-start-line="68" selection-start-column="39" selection-end-line="68" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -725,7 +723,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="28" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -733,7 +730,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="40" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -748,7 +744,7 @@
     <entry file="file://$PROJECT_DIR$/public/groupchart.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="97" column="90" selection-start-line="97" selection-start-column="90" selection-end-line="97" selection-end-column="90" />
+          <caret line="138" column="44" selection-start-line="138" selection-start-column="22" selection-end-line="138" selection-end-column="44" />
           <folding>
             <marker date="1435217732978" expanded="true" signature="568:637" placeholder="{...}" />
             <marker date="1435217732978" expanded="true" signature="4060:6046" placeholder="{...}" />
@@ -759,10 +755,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/groupcharts.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46303502">
-          <caret line="29" column="50" selection-start-line="29" selection-start-column="50" selection-end-line="29" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.16536964">
+          <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
           <folding>
-            <marker date="1435218081855" expanded="true" signature="1333:1502" placeholder="..." />
+            <element signature="n#style#0;n#strong#0;n#div#1;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1435220302657" expanded="true" signature="1333:1502" placeholder="..." />
           </folding>
         </state>
       </provider>
