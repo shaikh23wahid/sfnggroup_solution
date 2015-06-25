@@ -64,8 +64,9 @@ module.exports=function(app)
         res.render('professionlist.html')
     });
 
-    app.get('/:countrycode/bar-charts/',function(req,res){
-        res.render('groupcharts.html')
+    app.get('/:countrycode/bar-charts/:guniquename',function(req,res){
+        var guname = req.param('guniquename');
+        res.render('groupcharts.html', guniquename=guname)
     });
 
     app.get('/:countrycode/product-category/:pcuniquename/',function(req,res){

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html ng-app="groupchartApp">
+<html ng-app="groupchartApp" ng-controller="gcCtrl">
 <head>
-    <title>Pureprofile Group Chart</title>
+    <title>Pureprofile {{groupmetricdetails.groupname}}</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
@@ -11,24 +11,56 @@
     <script src="../../../groupchart.js"></script>
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+    <script>
+        var guniquename = '<%= guniquename %>';
+    </script>
 </head>
 <body>
-<div class="container" ng-controller="gcCtrl">
+<div class="container" >
     <div class="row">
+        <div class="col-md-4 aside">
+            <div class="col-box">
+                <div class="group-image">
+                    <img src="{{groupmetricdetails.groupthumbnaillargeurl}}" alt="{{groupmetricdetails.groupname}}" />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+                 <h1 class="heading">
+                    {{groupmetricdetails.groupname}}</h1>
+                <strong>{{groupmetricdetails.groupdescription}}</strong>
+        </div>
+    </div>
+    <hr />
+    <div class="row center">
         <h2>Where does this group live?</h2>
     </div>
-    <div class="row">
-        <div id="chart1">
+    <div class="row center">
+        <div id="chart1" style="margn-top:40px;">
         </div>
     </div>
-
-    <div class="row">
+    <hr />
+    <div class="row center">
+      <h2>How young is this group</h2>
+        <div class="col-md-4">
+            <img src="../../images/male.png">
+            <strong style="font-size:16px">Male :<strong> {{groupmetricdetails.gender.male}}
+        </div>
+        <div class="col-md-4">
+            <img src="../../images/female.png">
+            <strong style="font-size:16px">Female :<strong>
+                {{groupmetricdetails.gender.female | number}}
+        </div>
+    </div>
+    <hr/>
+    <div class="row center">
         <h2>How young is this group?</h2>
     </div>
-    <div class="row">
-        <div id="chart2">
+    <div class="row center">
+        <div id="chart2" style="margn-top:30px;">
         </div>
     </div>
+    <div class="row center"><br></div>
 </div>
 </body>
 </html>
