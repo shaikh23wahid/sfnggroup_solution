@@ -148,7 +148,8 @@ groupchartApp.controller('gcCtrl', function ($scope, metricgroupRepository) {
             // d3.tsv("frequency.tsv", type, function (error, data) {
             x.domain(objdata.map(function (d) { return d.text; }));
             //y.domain([0, d3.max(objdata, function (d) { return d.percentage;})]);
-            y.domain([0, maxPercentage+5]);
+            //y.domain([0, maxPercentage+5]);
+            y.domain([0, 100]);
 
             svg.append("g")
                 .attr("class", "x axis")
