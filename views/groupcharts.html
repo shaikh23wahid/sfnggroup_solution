@@ -15,6 +15,61 @@
     <script>
         var guniquename = '<%= guniquename %>';
     </script>
+    <style>
+        h1
+        {
+            margin: 0;
+            padding: 0.1rem 0.4rem;
+            font-size: 1rem;
+            font-weight: 500;
+            text-align: right;
+        }
+
+        .widget
+        {
+            display: inline-block;
+            border: 1px solid #AAA;
+        }
+
+        #chart2
+        {
+            height: 400px;
+            width: 500px;
+        }
+
+        svg
+        {
+            shape-rendering: crispEdges;
+        }
+
+        .bar
+        {
+            /*fill: #A18FDB;*/
+            fill: steelblue;
+        }
+
+        .value
+        {
+            font-size: 16px;
+            font-weight: 300;
+            fill: #333;
+        }
+
+        .label
+        {
+            font-size: 18px;
+            fill: #333;
+        }
+
+        .axis
+        {
+            font-size: 12px;
+        }
+        .axis path
+        {
+            fill: none;
+        }
+    </style>
 </head>
 <body>
 <div ng-include src="'../../../menu.html'"></div>
@@ -40,8 +95,10 @@
         <h2>Where does this group live?</h2>
     </div>
     <div class="row center">
+
         <div id="chart1" style="margn-top:40px;">
         </div>
+
     </div>
     <hr />
     <div class="row center">
@@ -61,8 +118,10 @@
         <h2>How young is this group?</h2>
     </div>
     <div class="row center">
-        <div id="chart2" style="margn-top:30px;">
-        </div>
+
+            <div id="chart2" style="margn-top:30px;">
+            </div>
+
     </div>
     <div class="row center"><br></div>
 </div>

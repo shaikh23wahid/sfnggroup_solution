@@ -1,13 +1,14 @@
 body
 {
-    font: 10px sans-serif;
+    /*font: 10px sans-serif;*/
 }
 
 .axis path, .axis line
 {
     fill: none;
-    stroke: #000;
+    /*stroke: #000;*/
     shape-rendering: crispEdges;
+    font-size : 15px;
 }
 
 .bar
@@ -55,4 +56,9 @@ body
     margin: -1px 0 0 0;
     top: 100%;
     left: 0;
+}
+.bartext {
+    font-size: 13px;
+    font-weight: 300;
+    fill : #333
 }
