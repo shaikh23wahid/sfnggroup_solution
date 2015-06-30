@@ -12,21 +12,6 @@ categoryApp.controller('categoryCtrl', function ($scope, categorydetailsReposito
     $scope.categorydetails = {};
     $scope.isdatafetching = true;
 
-    $scope.breadcrumbs = [
-        {
-            catname : "About You",
-            uname:"about-you"
-        },
-        {
-            catname : "Pets",
-            uname:"pets"
-        },
-        {
-            catname : "Pet Insurance",
-            uname:"pet-insurance"
-        }
-    ];
-
     categorydetailsRepository.getCategoryDetails($scope.categoryuniquename).success(function (categoryData) {
         $scope.categorydetails = categoryData.category_details;
         $scope.isdatafetching = false;
