@@ -24,14 +24,6 @@ categoryApp.controller('categoryCtrl', function ($scope, categorydetailsReposito
         {
             catname : "Pet Insurance",
             uname:"pet-insurance"
-        },
-        {
-            catname : "Pet Insurance2",
-            uname:"pet-insurance2"
-        },
-        {
-            catname : "Pet Insurance3",
-            uname:"pet-insurance3"
         }
     ];
 
