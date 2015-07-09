@@ -1,5 +1,14 @@
 var sfgroupsApp = angular.module("sfgroupsApp", ['angularUtils.directives.dirPagination']);
 
+sfgroupsApp.config(["$provide", function ($provide) {
+    $provide.decorator("$exceptionHandler", ["$delegate", function($delegate) {
+        return function (exception, cause) {
+            $rootScope.errorMessage = exception;
+            $delegate(exception, cause);
+        };
+    }]);
+}]);
+
 sfgroupsApp.service('sfgroupsRepository', function ($http) {
     this.getsalesforcegroups = function () {
         var url = "http://salesforce-python.pureprofile.com/salesforce/groups";
@@ -16,6 +25,9 @@ sfgroupsApp.controller('sfgroupsCtrl', function ($scope, sfgroupsRepository) {
 
     sfgroupsRepository.getsalesforcegroups().success(function (sfgroupsdata) {
         $scope.sfGroups = sfgroupsdata.groups;
+        $scope.isdatafetching = false;
+    }).error(function(response) {
+       $scope.errorMessage  = 'Internal Server Error [500], Try after some time';
         $scope.isdatafetching = false;
     });
 
