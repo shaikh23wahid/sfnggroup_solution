@@ -1,5 +1,14 @@
 var webApp = angular.module("webApp", ['angularUtils.directives.dirPagination']);
 
+webApp.config(["$provide", function ($provide) {
+    $provide.decorator("$exceptionHandler", ["$delegate", function($delegate) {
+        return function (exception, cause) {
+            $rootScope.errorMessage = exception;
+            $delegate(exception, cause);
+        };
+    }]);
+}]);
+
 webApp.service('websitesRepository', function ($http) {
     this.getAllWebsite = function () {
         var url = "http://salesforce-python.pureprofile.com/getallwebsite";
@@ -16,6 +25,9 @@ webApp.controller('websiteCtrl', function ($scope, websitesRepository) {
 
     websitesRepository.getAllWebsite().success(function (websitedata) {
         $scope.websites = websitedata.webstites;
+        $scope.isdatafetching = false;
+    }).error(function(response) {
+        $scope.errorMessage  = 'Internal Server Error [500], Try after some time';
         $scope.isdatafetching = false;
     });
 

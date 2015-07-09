@@ -18,6 +18,9 @@
         <div class="row">
             <img class="img-responsive" ng-show="isdatafetching" style="margin: 0 auto;" src="http://newgroupsapp.pureprofile.com/images/spiffygif_30x30.gif" />
         </div>
+        <div class="row" ng-show="errorMessage">
+            <h2>{{errorMessage}}</h2>
+        </div>
         <div class="row" ng-show="websites.length > 0">
             <div class="col-md-4">
                 <label for="search">

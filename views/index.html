@@ -22,7 +22,9 @@
     <div class="container page-container">
        <div ng-controller="homeCtrl" >
            <img style="margin-left:50%;" src="http://newgroupsapp.pureprofile.com/images/spiffygif_30x30.gif" ng-show="isdatafetching"/>
-
+           <div ng-show="errorMessage">
+               <h2>{{errorMessage}}</h2>
+           </div>
            <div class="row" ng-show="groupData.length>0">
                <a style="float:right;" href="/au/product-categories">Go to Product Categories</a>
             <div class="col-xs-6" style="margin-left: 5px;">

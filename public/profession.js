@@ -1,5 +1,14 @@
 var profApp = angular.module("profApp", ['angularUtils.directives.dirPagination']);
 
+profApp.config(["$provide", function ($provide) {
+    $provide.decorator("$exceptionHandler", ["$delegate", function($delegate) {
+        return function (exception, cause) {
+            $rootScope.errorMessage = exception;
+            $delegate(exception, cause);
+        };
+    }]);
+}]);
+
 profApp.service('professionRepository', function ($http) {
     this.getProfessions = function () {
         var url = "http://salesforce-python.pureprofile.com/getprofessions";
@@ -15,6 +24,9 @@ profApp.controller('professionCtrl', function ($scope, professionRepository) {
 
     professionRepository.getProfessions().success(function (professiondata) {
         $scope.professions = professiondata.professions;
+        $scope.isdatafetching = false;
+    }).error(function(response) {
+        $scope.errorMessage  = 'Internal Server Error [500], Try after some time';
         $scope.isdatafetching = false;
     });
 

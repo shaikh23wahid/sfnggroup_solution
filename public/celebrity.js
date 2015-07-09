@@ -1,5 +1,14 @@
 var celApp = angular.module("celApp", ['angularUtils.directives.dirPagination']);
 
+celApp.config(["$provide", function ($provide) {
+    $provide.decorator("$exceptionHandler", ["$delegate", function($delegate) {
+        return function (exception, cause) {
+            $rootScope.errorMessage = exception;
+            $delegate(exception, cause);
+        };
+    }]);
+}]);
+
 celApp.service('celebrityRepository', function ($http) {
     this.getCelebrities = function () {
         var url = "http://salesforce-python.pureprofile.com/getcelebrities";
@@ -15,6 +24,9 @@ celApp.controller('celebrityCtrl', function ($scope, celebrityRepository) {
 
     celebrityRepository.getCelebrities().success(function (celebritiesdata) {
         $scope.celebrities = celebritiesdata.celebrities;
+        $scope.isdatafetching = false;
+    }).error(function(response) {
+        $scope.errorMessage  = 'Internal Server Error [500], Try after some time';
         $scope.isdatafetching = false;
     });
 

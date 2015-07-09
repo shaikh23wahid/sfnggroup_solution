@@ -1,5 +1,14 @@
 var placeApp = angular.module("placeApp", ['angularUtils.directives.dirPagination']);
 
+placeApp.config(["$provide", function ($provide) {
+    $provide.decorator("$exceptionHandler", ["$delegate", function($delegate) {
+        return function (exception, cause) {
+            $rootScope.errorMessage = exception;
+            $delegate(exception, cause);
+        };
+    }]);
+}]);
+
 placeApp.service('placeRepository', function ($http) {
     this.getAllPlace = function () {
         var url = "http://salesforce-python.pureprofile.com/getallplace";
@@ -16,6 +25,9 @@ placeApp.controller('placeCtrl', function ($scope, placeRepository) {
 
     placeRepository.getAllPlace().success(function (placedata) {
         $scope.places = placedata.places;
+        $scope.isdatafetching = false;
+    }).error(function(response) {
+        $scope.errorMessage  = 'Internal Server Error [500], Try after some time';
         $scope.isdatafetching = false;
     });
 

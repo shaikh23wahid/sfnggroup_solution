@@ -1,5 +1,6 @@
 var gdApp = angular.module("gdApp", []);
 
+
 gdApp.service('groupRepository', function ($http) {
 
     this.getGroupDetails = function (groupuniquename) {
